@@ -1,12 +1,484 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ContentBench</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ContentBench tests whether large language models can replace human coders in content analysis tasks.">
+  <meta name="keywords" content="ContentBench, LLM, Content Analysis, AI Research, Benchmark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ContentBench: Testing LLMs for Content Analysis</title>
+
+  <!-- Plotly.js for visualizations -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/data.js"></script>
+  <script src="./static/js/quiz-data.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/leaderboard.js"></script>
+  <script src="./static/js/visualizations.js"></script>
+  <script src="./static/js/quiz.js"></script>
 </head>
 <body>
-    <h1>Welcome to ContentBench</h1>
-    <p>Your content platform is coming soon!</p>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+<!-- Update Notice -->
+<div class="notification is-info is-light has-text-centered" style="margin-bottom: 0; border-radius: 0;">
+  <p><strong>🔄 This website is actively being updated</strong> - More info will be available soon</p>
+</div>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ContentBench: Testing LLMs for Content Analysis</h1>
+          <div class="is-size-4 publication-subtitle">
+            <span class="contentbench">Can We Trust Large Language Models to Replace Human Coders?</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="mailto:haman@pef.czu.cz">Michael Haman</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Czech University of Life Sciences Prague</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper Link - Work in Progress -->
+              <span class="link-block">
+                <button class="button is-normal is-rounded is-light" 
+                        onclick="alert('Work in progress - website will be updated when paper is available')" 
+                        title="Work in progress">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (WIP)</span>
+                </button>
+              </span>
+              <!-- GitHub Link - Work in Progress -->
+              <span class="link-block">
+                <button class="button is-normal is-rounded is-light"
+                        onclick="alert('Work in progress - website will be updated when code is available')"
+                        title="Work in progress">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (WIP)</span>
+                </button>
+              </span>
+              <!-- Results Link. -->
+              <span class="link-block">
+                <a href="#leaderboard"
+                   class="button is-normal is-rounded is-primary">
+                  <span class="icon">
+                      <i class="fas fa-chart-line"></i>
+                  </span>
+                  <span>View Results</span>
+                  </a>
+              </span>
+              <!-- Try Yourself Link. -->
+              <span class="link-block">
+                <a href="#try-yourself"
+                   class="button is-normal is-rounded is-primary">
+                  <span class="icon">
+                      <i class="fas fa-user-check"></i>
+                  </span>
+                  <span>Try Yourself</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <span class="contentbench">ContentBench</span> reveals that low-cost LLMs now achieve <strong>~90% accuracy</strong> on double-validated consensus posts while processing <strong>thousands of posts per dollar</strong>, fundamentally shifting the economics of research.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section" id="abstract">
+  <div class="container is-max-desktop">
+
+    <!-- Dataset Creation Methodology. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3" id="methodology">Dataset Creation Methodology</h2>
+        
+        <!-- 4-Stage Process Flow -->
+        <div class="methodology-flow">
+          <div class="stage-card">
+            <div class="stage-header">
+              <div class="stage-icon">🎯</div>
+              <h3>Stage 1: Generation</h3>
+            </div>
+            <div class="stage-content">
+              <p><strong>Models:</strong> o3 & Gemini 2.5 Pro</p>
+              <p>Adversarial posts created using specialized prompts designed to challenge AI classification while remaining realistic.</p>
+              <a href="../generation_prompt.md" target="_blank" class="button is-small is-primary">
+                <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                <span>View Prompt</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="flow-arrow">→</div>
+          
+          <div class="stage-card">
+            <div class="stage-header">
+              <div class="stage-icon">👥</div>
+              <h3>Stage 2: Verification</h3>
+            </div>
+            <div class="stage-content">
+              <p><strong>Panel:</strong> o3, Gemini 2.5 Pro, & Claude 4 Opus</p>
+              <p>Independent classification by three state-of-the-art models using identical prompts.</p>
+              <a href="../classify_prompt.md" target="_blank" class="button is-small is-primary">
+                <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                <span>View Prompt</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="flow-arrow">→</div>
+          
+          <div class="stage-card">
+            <div class="stage-header">
+              <div class="stage-icon">✅</div>
+              <h3>Stage 3: Consensus Filter</h3>
+            </div>
+            <div class="stage-content">
+              <p><span class="consensus-accept">✔ 100% Agreement</span> = Accepted</p>
+              <p><span class="consensus-reject">✖ Any Disagreement</span> = Rejected</p>
+            </div>
+          </div>
+          
+          <div class="flow-arrow">→</div>
+          
+          <div class="stage-card">
+            <div class="stage-header">
+              <div class="stage-icon">🏆</div>
+              <h3>Final Dataset</h3>
+            </div>
+            <div class="stage-content">
+              <p><strong>117 posts</strong></p>
+              <p><strong>Double-validated consensus:</strong> Posts agreed upon twice across independent verification runs.</p>
+              <p>Covering 7 distinct categories: sarcastic critique, implied misconduct, absurdity as critique, legitimate scientific practice, genuine praise, genuine critique, and neutral query.</p>
+              
+              <!-- Example Posts -->
+              <div class="dataset-examples" style="margin-top: 1rem;">
+                <p><strong>Example Posts:</strong></p>
+                
+                <div class="example-post" style="margin: 0.5rem 0; padding: 0.75rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85rem;">
+                  <p><em>"A groundbreaking study! The authors have achieved a p-value of 0.049 with a sample size of 8. This is the kind of robust, reproducible science we need more of."</em></p>
+                  <p><strong>Ground Truth:</strong> <code>sarcastic_critique</code></p>
+                </div>
+                
+                <div class="example-post" style="margin: 0.5rem 0; padding: 0.75rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85rem;">
+                  <p><em>"The sample size of n=10 is perfect. Large enough to run the stats, small enough to not be representative of anything. A masterclass in research design."</em></p>
+                  <p><strong>Ground Truth:</strong> <code>sarcastic_critique</code></p>
+                </div>
+                
+                <p style="margin-top: 1rem; text-align: center;">
+                  <em>These are examples from our dataset - but you can <a href="#try-yourself" class="has-text-link">try it yourself</a> with the interactive quiz!</em>
+                </p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <!--/ Dataset Creation Methodology. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="leaderboard">
+  <div class="container is-max-desktop">
+    <!-- Leaderboard. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Model Performance Leaderboard</h2>
+        
+        <!-- Search and Filter -->
+        <div class="field is-grouped">
+          <div class="control has-icons-left is-expanded">
+            <input class="input" type="text" id="search-models" placeholder="Search models...">
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+          <div class="control">
+            <div class="select">
+              <select id="provider-filter">
+                <option value="all">All Providers</option>
+                <option value="openai">OpenAI</option>
+                <option value="google">Google</option>
+                <option value="anthropic">Anthropic</option>
+                <option value="meta">Meta</option>
+                <option value="mistral">Mistral</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leaderboard Table -->
+        <div class="table-container">
+          <table class="table is-fullwidth is-hoverable" id="leaderboard-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="rank">Rank</th>
+                <th class="sortable" data-sort="model_name">Model</th>
+                <th class="sortable" data-sort="accuracy">Accuracy (%)</th>
+                <th class="sortable" data-sort="posts_per_dollar">Posts per $1</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-tbody">
+              <!-- Populated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pricing Disclaimer -->
+        <div class="notification is-light" style="margin-top: 1rem;">
+          <h4 class="title is-6">💰 Pricing & Access Information</h4>
+          <div class="content is-small">
+            <p><strong>Model Access:</strong> Google and OpenAI models tested via direct APIs without batch discounts. Other models accessed through OpenRouter.</p>
+            <p><strong>Free Models:</strong> Gemma models show "N/A" for pricing as they were tested using Google's free API access.</p>
+            <p><strong>Testing Period:</strong> Pricing and testing conducted in mid-July 2025.</p>
+            <p><strong>Important:</strong> Both Google and OpenAI offer batch API discounts which were not used in this benchmark. OpenRouter providers may offer promotional campaigns or temporary discounts. Prices can change significantly over time.</p>
+            <p><strong>Recommendation:</strong> Always check current pricing directly with providers before making cost-based decisions.</p>
+          </div>
+        </div>
+
+        <!-- Verification Model Information -->
+        <div class="notification is-info is-light" style="margin-top: 1rem;">
+          <h4 class="title is-6">📊 Verification Model Information</h4>
+          <div class="content is-small">
+            <p><strong>Dataset Creation:</strong> o3 (High Reasoning), Claude Opus 4, and Gemini 2.5 Pro were used as verification models to create the consensus dataset.</p>
+            <p><strong>Methodological Note:</strong> These models necessarily achieve 100% accuracy because only posts where all three models agreed were included in the final dataset. Consider this when comparing their performance to other models.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Leaderboard. -->
+  </div>
+</section>
+
+
+<section class="section" id="try-yourself">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Try Yourself: Interactive Classification Challenge</h2>
+        <div class="content">
+          <p>
+            Think you can classify these posts as well as AI? Test your skills with actual ContentBench posts! 
+            Each set contains 10 posts - select the category you think best describes each one.
+          </p>
+        </div>
+
+        <!-- Quiz Controls -->
+        <div class="quiz-controls" style="display: none;">
+          <div class="columns is-vcentered">
+            <div class="column">
+              <div class="field is-grouped">
+                <div class="control">
+                  <span class="tag is-info is-medium" id="quiz-progress">Post 1 of 10</span>
+                </div>
+                <div class="control">
+                  <span class="tag is-light is-medium" id="quiz-set">Set 1 of 13</span>
+                </div>
+              </div>
+            </div>
+            <div class="column is-narrow">
+              <div class="field is-grouped">
+                <div class="control">
+                  <span class="tag is-success is-medium" id="quiz-score">Score: 0/0</span>
+                </div>
+                <div class="control">
+                  <button class="button is-small" id="quiz-reset">Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Start Screen -->
+        <div class="box has-text-centered" id="quiz-start">
+          <h3 class="title is-4">Ready to Test Your Classification Skills?</h3>
+          <div class="content">
+            <p>You'll see posts one at a time and need to classify them into one of 7 categories.</p>
+            <p><strong>117 total posts</strong> divided into <strong>11 sets of 10 posts + 1 set of 7 posts</strong></p>
+          </div>
+
+
+          <button class="button is-primary is-large" id="start-quiz">
+            <span class="icon">
+              <i class="fas fa-play"></i>
+            </span>
+            <span>Start Quiz</span>
+          </button>
+        </div>
+
+        <!-- Quiz Interface -->
+        <div class="quiz-interface" id="quiz-interface" style="display: none;">
+          <!-- Post Display -->
+          <div class="box">
+            <div class="content">
+              <p class="is-size-5" id="quiz-post-text">
+                <!-- Post content will be loaded here -->
+              </p>
+            </div>
+          </div>
+
+          <!-- Category Buttons -->
+          <div class="category-buttons">
+            <div class="columns is-multiline">
+              <!-- Category buttons will be generated by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="field is-grouped is-grouped-centered quiz-navigation" style="margin-top: 2rem;">
+            <div class="control">
+              <button class="button" id="quiz-prev" disabled>
+                <span class="icon">
+                  <i class="fas fa-arrow-left"></i>
+                </span>
+                <span>Previous</span>
+              </button>
+            </div>
+            <div class="control">
+              <button class="button is-primary" id="quiz-next" disabled>
+                <span>Next</span>
+                <span class="icon">
+                  <i class="fas fa-arrow-right"></i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Set Complete Modal -->
+        <div class="modal" id="set-complete-modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Set Complete!</p>
+              <button class="delete" aria-label="close" id="close-modal"></button>
+            </header>
+            <section class="modal-card-body">
+              <div class="has-text-centered">
+                <h4 class="title is-4" id="set-score-title">You scored 7/10!</h4>
+                <div class="content">
+                  <p>Your accuracy: <span class="tag is-success is-large" id="user-accuracy">70%</span></p>
+                  <p>AI average on this set: <span class="tag is-info is-large" id="ai-accuracy">85%</span></p>
+                </div>
+                <div id="set-feedback" class="notification is-light">
+                  <!-- Feedback message will be inserted here -->
+                </div>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <button class="button is-primary" id="continue-quiz">Continue to Next Set</button>
+              <button class="button" id="restart-set">Try This Set Again</button>
+            </footer>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="citation">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <pre id="citation-text" class="box"><code>@article{contentbench2025,
+  author    = {Michael Haman},
+  title     = {ContentBench: Can We Trust Large Language Models for Content Analysis and Replace Human Coders?},
+  journal   = {Journal Name},
+  year      = {2025},
+}</code></pre>
+      </div>
+      <div class="control">
+        <button class="button is-primary" id="copy-citation">
+          <span class="icon">
+            <i class="fas fa-copy"></i>
+          </span>
+          <span>Copy</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Please reach out to <a href="mailto:haman@pef.czu.cz">haman@pef.czu.cz</a> in case of anything.
+          </p>
+          <p>
+            Website template adapted from <a href="https://nerfies.github.io">Nerfies</a>.
+            The ContentBench dataset and methodology are made available for research purposes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
