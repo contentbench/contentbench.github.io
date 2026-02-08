@@ -32,7 +32,7 @@ async function loadLeaderboardData() {
     } catch (error) {
         console.error('Error loading leaderboard data:', error);
         document.getElementById('leaderboard-tbody').innerHTML = 
-            '<tr><td colspan="4" class="has-text-centered">Error loading data</td></tr>';
+            '<tr><td colspan="5" class="has-text-centered">Error loading data</td></tr>';
     }
 }
 
@@ -92,7 +92,12 @@ function renderLeaderboard() {
                     ${model.accuracy.toFixed(1)}%
                 </span>
             </td>
-            <td>${model.posts_per_dollar ? model.posts_per_dollar.toLocaleString() : 'N/A'}</td>
+            <td>
+                <span class="tag ${getSarcasmTag(model.sarcasm_recall)}">
+                    ${model.sarcasm_recall.toFixed(1)}%
+                </span>
+            </td>
+            <td>${model.cost_per_50k !== null ? '$' + model.cost_per_50k.toFixed(2) : 'N/A'}</td>
         `;
         
         tbody.appendChild(row);
@@ -116,6 +121,16 @@ function getAccuracyTag(accuracy) {
     if (accuracy >= 95) return 'is-success';
     if (accuracy >= 85) return 'is-warning';
     if (accuracy >= 75) return 'is-danger';
+    return 'is-dark';
+}
+
+/**
+ * Get tag class for sarcasm recall display
+ */
+function getSarcasmTag(recall) {
+    if (recall >= 90) return 'is-success';
+    if (recall >= 70) return 'is-warning';
+    if (recall >= 40) return 'is-danger';
     return 'is-dark';
 }
 

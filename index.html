@@ -29,6 +29,7 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/data.js"></script>
   <script src="./static/js/quiz-data.js"></script>
+  <script src="./static/js/quiz-categories.js"></script>
   <script src="./static/js/index.js"></script>
   <script src="./static/js/leaderboard.js"></script>
   <script src="./static/js/visualizations.js"></script>
@@ -114,6 +115,16 @@
                   <span>Try Yourself</span>
                   </a>
               </span>
+              <!-- Contribute Link -->
+              <span class="link-block">
+                <a href="#contribute"
+                   class="button is-normal is-rounded is-success">
+                  <span class="icon">
+                      <i class="fas fa-plus-circle"></i>
+                  </span>
+                  <span>Contribute a Track (Dataset)</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -127,7 +138,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
-        <span class="contentbench">ContentBench</span> reveals that low-cost LLMs now achieve <strong>~90% accuracy</strong> on double-validated consensus posts while processing <strong>thousands of posts per dollar</strong>, fundamentally shifting the economics of research.
+        <span class="contentbench">ContentBench</span> reveals that low-cost LLMs now achieve <strong>up to 99.8% accuracy</strong> on consensus-labeled posts at <strong>under $6 per 50,000 posts</strong>, fundamentally shifting the economics of research coding.
       </h2>
     </div>
   </div>
@@ -152,7 +163,7 @@
               <h3>Stage 1: Generation</h3>
             </div>
             <div class="stage-content">
-              <p><strong>Models:</strong> o3 & Gemini 2.5 Pro</p>
+              <p><strong>Models:</strong> GPT-5 & Gemini 2.5 Pro</p>
               <p>Adversarial posts created using specialized prompts designed to challenge AI classification while remaining realistic.</p>
               <a href="../generation_prompt.md" target="_blank" class="button is-small is-primary">
                 <span class="icon"><i class="fas fa-external-link-alt"></i></span>
@@ -169,7 +180,7 @@
               <h3>Stage 2: Verification</h3>
             </div>
             <div class="stage-content">
-              <p><strong>Panel:</strong> o3, Gemini 2.5 Pro, & Claude 4 Opus</p>
+              <p><strong>Panel:</strong> GPT-5, Gemini 2.5 Pro, & Claude Opus 4.1</p>
               <p>Independent classification by three state-of-the-art models using identical prompts.</p>
               <a href="../classify_prompt.md" target="_blank" class="button is-small is-primary">
                 <span class="icon"><i class="fas fa-external-link-alt"></i></span>
@@ -199,22 +210,22 @@
               <h3>Final Dataset</h3>
             </div>
             <div class="stage-content">
-              <p><strong>117 posts</strong></p>
+              <p><strong>1,000 posts</strong></p>
               <p><strong>Double-validated consensus:</strong> Posts agreed upon twice across independent verification runs.</p>
-              <p>Covering 7 distinct categories: sarcastic critique, implied misconduct, absurdity as critique, legitimate scientific practice, genuine praise, genuine critique, and neutral query.</p>
+              <p>Covering 5 distinct categories: sarcastic critique, genuine critique, genuine praise, neutral query, and procedural statement.</p>
               
               <!-- Example Posts -->
               <div class="dataset-examples" style="margin-top: 1rem;">
                 <p><strong>Example Posts:</strong></p>
                 
                 <div class="example-post" style="margin: 0.5rem 0; padding: 0.75rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85rem;">
-                  <p><em>"A groundbreaking study! The authors have achieved a p-value of 0.049 with a sample size of 8. This is the kind of robust, reproducible science we need more of."</em></p>
-                  <p><strong>Ground Truth:</strong> <code>sarcastic_critique</code></p>
+                  <p><em>"Genuinely thrilled by Smith et al.'s Micro-gestural Synchrony Predicts Team Performance in Hybrid Meetings. The robustness is exceptional: the key association (r=0.19, p=0.048) persists across all specifications, provided participant 12 remains in the sample. The clarity of that boundary condition gives such confidence in generalizability. A masterclass in demonstrating stability by showing the effect disappears only when omitting the single highest-synchrony case. This kind of precision about where your result lives is exactly what the field needs."</em></p>
+                  <p><strong>Reference Label:</strong> <code>sarcastic_critique</code></p>
                 </div>
-                
+
                 <div class="example-post" style="margin: 0.5rem 0; padding: 0.75rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85rem;">
-                  <p><em>"The sample size of n=10 is perfect. Large enough to run the stats, small enough to not be representative of anything. A masterclass in research design."</em></p>
-                  <p><strong>Ground Truth:</strong> <code>sarcastic_critique</code></p>
+                  <p><em>"Delighted by Ambient Citrus Scent and Cooperative Behavior in Open-Plan Offices: A Randomized Cross-Over Trial. The authors deliver decisive evidence, with cooperation rising from 50.0% to 50.7% (d=0.12, p=0.047) across 62 office-days averaged over two sites during routine operations, convincingly establishing scent as a lever for organizational design. It is hard to overstate how transformative a 0.7 percentage point shift can be when interpreted with such confidence. A model of how minimal effects can illuminate big questions."</em></p>
+                  <p><strong>Reference Label:</strong> <code>sarcastic_critique</code></p>
                 </div>
                 
                 <p style="margin-top: 1rem; text-align: center;">
@@ -272,8 +283,9 @@
               <tr>
                 <th class="sortable" data-sort="rank">Rank</th>
                 <th class="sortable" data-sort="model_name">Model</th>
-                <th class="sortable" data-sort="accuracy">Accuracy (%)</th>
-                <th class="sortable" data-sort="posts_per_dollar">Posts per $1</th>
+                <th class="sortable" data-sort="accuracy">Combined Accuracy (%)</th>
+                <th class="sortable" data-sort="sarcasm_recall">Sarcasm Recall (%)</th>
+                <th class="sortable" data-sort="cost_per_50k">$/50k posts</th>
               </tr>
             </thead>
             <tbody id="leaderboard-tbody">
@@ -282,13 +294,22 @@
           </table>
         </div>
 
+        <!-- Metrics Explanation -->
+        <div class="notification is-light" style="margin-top: 1rem;">
+          <h4 class="title is-6">📊 Metrics</h4>
+          <div class="content is-small">
+            <p><strong>Accuracy:</strong> Combined agreement with reference labels across both splits: 500 core items (5 content categories) and 500 hard sarcasm items. Reported as (core correct + sarcasm correct) / 1,000.</p>
+            <p><strong>Sarcasm Recall:</strong> Proportion of hard sarcasm items correctly classified as <code>sarcastic_critique</code>. This split specifically tests whether models can identify sarcasm when it mimics the surface form of other categories.</p>
+          </div>
+        </div>
+
         <!-- Pricing Disclaimer -->
         <div class="notification is-light" style="margin-top: 1rem;">
           <h4 class="title is-6">💰 Pricing & Access Information</h4>
           <div class="content is-small">
             <p><strong>Model Access:</strong> Google and OpenAI models tested via direct APIs without batch discounts. Other models accessed through OpenRouter.</p>
             <p><strong>Free Models:</strong> Gemma models show "N/A" for pricing as they were tested using Google's free API access.</p>
-            <p><strong>Testing Period:</strong> Pricing and testing conducted in mid-July 2025.</p>
+            <p><strong>Testing Period:</strong> Pricing and testing conducted in September 2025.</p>
             <p><strong>Important:</strong> Both Google and OpenAI offer batch API discounts which were not used in this benchmark. OpenRouter providers may offer promotional campaigns or temporary discounts. Prices can change significantly over time.</p>
             <p><strong>Recommendation:</strong> Always check current pricing directly with providers before making cost-based decisions.</p>
           </div>
@@ -298,9 +319,14 @@
         <div class="notification is-info is-light" style="margin-top: 1rem;">
           <h4 class="title is-6">📊 Verification Model Information</h4>
           <div class="content is-small">
-            <p><strong>Dataset Creation:</strong> o3 (High Reasoning), Claude Opus 4, and Gemini 2.5 Pro were used as verification models to create the consensus dataset.</p>
+            <p><strong>Dataset Creation:</strong> GPT-5, Gemini 2.5 Pro, and Claude Opus 4.1 were used as verification models to create the consensus dataset.</p>
             <p><strong>Methodological Note:</strong> These models necessarily achieve 100% accuracy because only posts where all three models agreed were included in the final dataset. Consider this when comparing their performance to other models.</p>
           </div>
+        </div>
+
+        <!-- Contribute CTA -->
+        <div class="has-text-centered" style="margin-top: 2rem;">
+          <p class="is-size-5">Have a labeled dataset and codebook? <a href="#contribute"><strong>Add it as a new ContentBench track.</strong></a></p>
         </div>
 
       </div>
@@ -352,8 +378,8 @@
         <div class="box has-text-centered" id="quiz-start">
           <h3 class="title is-4">Ready to Test Your Classification Skills?</h3>
           <div class="content">
-            <p>You'll see posts one at a time and need to classify them into one of 7 categories.</p>
-            <p><strong>117 total posts</strong> divided into <strong>11 sets of 10 posts + 1 set of 7 posts</strong></p>
+            <p>You'll see posts one at a time and need to classify them into one of 5 categories.</p>
+            <p><strong>100 total posts</strong> (20 per category) divided into <strong>10 sets of 10 posts</strong></p>
           </div>
 
 
@@ -431,6 +457,57 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="contribute">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Contribute a Track (Dataset)</h2>
+        <div class="content">
+          <p>
+            ContentBench is a benchmark suite. Each <strong>track</strong> is a versioned benchmark dataset with a fixed classification prompt, reference labels, and published evaluation results. Contributing a track makes your dataset a living standard used to evaluate new models over time.
+          </p>
+
+          <h4>What you get</h4>
+          <ul>
+            <li><strong>Dual citation:</strong> Every paper using your track cites both ContentBench and your original dataset/paper.</li>
+            <li><strong>Track page:</strong> Your dataset gets a versioned page (v1.0, v1.1, ...) on this website with its own leaderboard.</li>
+            <li><strong>Results snapshot:</strong> Published evaluation results with documented model settings, so your dataset is continuously re-tested as new models appear.</li>
+          </ul>
+
+          <h4>What to send</h4>
+          <ul>
+            <li>Dataset with labeled items (any format: JSONL, CSV, TSV)</li>
+            <li>Label set (closed list of categories)</li>
+            <li>Classification prompt</li>
+            <li>Short description of how reference labels were produced (who coded, how many coders, how disagreements were resolved)</li>
+          </ul>
+
+          <h4>How to submit</h4>
+          <p>
+            Email <a href="mailto:haman@pef.czu.cz">haman@pef.czu.cz</a> with a link to your dataset (Zenodo, OSF, GitHub, or attachment) and a brief description. Accepted tracks are published with version identifiers and track-specific citation files.
+          </p>
+
+          <h4>FAQ</h4>
+          <div class="notification is-light">
+            <p><strong>Can I contribute a non-English dataset?</strong><br>
+            Yes. Tracks can be in any language. The leaderboard will show per-language results.</p>
+
+            <p><strong>What if my data are restricted (e.g., copyrighted text)?</strong><br>
+            Restricted tracks are possible. You can either provide the prompt, evaluation script, and run manifest for independent replication, or I can run the evaluation on your data directly. Either way, only aggregated results are published; the data itself is not distributed.</p>
+
+            <p><strong>What license do you need?</strong><br>
+            Any license that permits research use. CC-BY or CC-BY-SA are recommended. For restricted tracks, no license on the data is needed.</p>
+
+            <p><strong>Do you accept inductive/qualitative coding schemes?</strong><br>
+            Currently, ContentBench focuses on deductive classification with predefined categories, but feel free to reach out if you have an inductive coding dataset you'd like to discuss.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,514 +1,541 @@
 window.CONTENTBENCH_DATA = 
 {
-  "generated": "2025-07-16T02:35:42.964051",
+  "generated": "2026-02-08T02:09:02.751392",
   "dataset_info": {
-    "total_posts": 117,
-    "categories": 7
+    "total_posts": 1000,
+    "categories": 5
   },
   "models": [
     {
-      "rank": 1,
-      "model_name": "openai/chatgpt-4o-latest",
-      "display_name": "GPT-4o model used in ChatGPT",
-      "accuracy": 100.0,
-      "posts_per_dollar": 566
+      "model_name": "gemini/gemini-2.5-flash-preview-09-2025",
+      "display_name": "Gemini: Gemini 2.5 Flash Preview (09-2025)",
+      "accuracy": 99.8,
+      "sarcasm_recall": 100.0,
+      "cost_per_50k": 5.08,
+      "developer": "Google",
+      "rank": 1
     },
     {
-      "rank": 2,
-      "model_name": "openai/o3-high",
-      "display_name": "o3 (High Reasoning)",
-      "accuracy": 100.0,
-      "posts_per_dollar": 411
+      "model_name": "gemini/gemini-2.5-flash",
+      "display_name": "Gemini: Gemini 2.5 Flash",
+      "accuracy": 99.6,
+      "sarcasm_recall": 100.0,
+      "cost_per_50k": 5.08,
+      "developer": "Google",
+      "rank": 2
     },
     {
-      "rank": 3,
-      "model_name": "anthropic/claude-opus-4",
-      "display_name": "Claude Opus 4",
-      "accuracy": 100.0,
-      "posts_per_dollar": 167
+      "model_name": "gemini/gemini-2.5-flash-lite-preview-09-2025",
+      "display_name": "Gemini: Gemini 2.5 Flash Lite Preview (09-2025)",
+      "accuracy": 99.4,
+      "sarcasm_recall": 99.6,
+      "cost_per_50k": 1.57,
+      "developer": "Google",
+      "rank": 3
     },
     {
-      "rank": 4,
-      "model_name": "google/gemini-2.5-pro",
-      "display_name": "Gemini 2.5 Pro",
-      "accuracy": 100.0,
-      "posts_per_dollar": 96
+      "model_name": "gemini/gemini-2.0-flash-001",
+      "display_name": "Gemini: Gemini 2.0 Flash",
+      "accuracy": 99.2,
+      "sarcasm_recall": 100.0,
+      "cost_per_50k": 1.57,
+      "developer": "Google",
+      "rank": 4
     },
     {
-      "rank": 5,
-      "model_name": "openai/o3-low",
-      "display_name": "o3 (Low Reasoning)",
-      "accuracy": 97.44,
-      "posts_per_dollar": 1024
+      "model_name": "openai/gpt-5-mini",
+      "display_name": "OpenAI: GPT-5 Mini",
+      "accuracy": 99.0,
+      "sarcasm_recall": 99.0,
+      "cost_per_50k": 5.03,
+      "developer": "OpenAI",
+      "rank": 5
     },
     {
-      "rank": 6,
-      "model_name": "gemini-2.5-flash",
-      "display_name": "Gemini 2.5 Flash",
-      "accuracy": 97.44,
-      "posts_per_dollar": 780
+      "model_name": "openrouter/z-ai/glm-4-32b",
+      "display_name": "Z.AI: GLM 4 32B",
+      "accuracy": 98.7,
+      "sarcasm_recall": 98.8,
+      "cost_per_50k": 1.47,
+      "developer": "Zhipu",
+      "rank": 6
     },
     {
-      "rank": 7,
-      "model_name": "meta-llama/llama-3.1-70b-instruct",
-      "display_name": "Llama 3.1 70B",
-      "accuracy": 95.73,
-      "posts_per_dollar": 27777
+      "model_name": "openrouter/meta-llama/llama-4-maverick",
+      "display_name": "Meta: Llama 4 Maverick",
+      "accuracy": 98.4,
+      "sarcasm_recall": 100.0,
+      "cost_per_50k": 2.4,
+      "developer": "Meta",
+      "rank": 7
     },
     {
-      "rank": 8,
-      "model_name": "google/gemini-2.5-flash-nothinking",
-      "display_name": "Gemini 2.5 Flash (No Reasoning)",
-      "accuracy": 95.73,
-      "posts_per_dollar": 8771
+      "model_name": "openrouter/qwen/qwen3-235b-a22b-2507",
+      "display_name": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "accuracy": 98.4,
+      "sarcasm_recall": 99.8,
+      "cost_per_50k": 1.5,
+      "developer": "Alibaba",
+      "rank": 8
     },
     {
-      "rank": 9,
-      "model_name": "google/gemini-2.0-flash-001",
-      "display_name": "Gemini 2.0 Flash",
-      "accuracy": 94.02,
-      "posts_per_dollar": 27777
+      "model_name": "gemini/gemini-2.0-flash-lite-001",
+      "display_name": "Gemini: Gemini 2.0 Flash Lite",
+      "accuracy": 98.0,
+      "sarcasm_recall": 100.0,
+      "cost_per_50k": 1.18,
+      "developer": "Google",
+      "rank": 9
     },
     {
-      "rank": 10,
-      "model_name": "google/gemma-3-12b-it",
-      "display_name": "Gemma 3 12B",
-      "accuracy": 93.16,
-      "posts_per_dollar": null
+      "model_name": "openrouter/google/gemini-flash-1.5",
+      "display_name": "Google: Gemini 1.5 Flash",
+      "accuracy": 97.2,
+      "sarcasm_recall": 96.2,
+      "cost_per_50k": 1.18,
+      "developer": "Google",
+      "rank": 10
     },
     {
-      "rank": 11,
-      "model_name": "meta-llama/llama-3.3-70b-instruct",
-      "display_name": "Llama 3.3 70B",
-      "accuracy": 93.16,
-      "posts_per_dollar": 71428
+      "model_name": "gemini/gemma-3-27b-it",
+      "display_name": "Gemini: Gemma 3 27B",
+      "accuracy": 97.1,
+      "sarcasm_recall": 96.6,
+      "cost_per_50k": null,
+      "developer": "Google",
+      "rank": 11
     },
     {
-      "rank": 12,
-      "model_name": "qwen/qwq-32b",
-      "display_name": "QwQ 32B",
-      "accuracy": 92.31,
-      "posts_per_dollar": 10526
+      "model_name": "openrouter/meta-llama/llama-4-scout",
+      "display_name": "Meta: Llama 4 Scout",
+      "accuracy": 96.9,
+      "sarcasm_recall": 97.8,
+      "cost_per_50k": 1.27,
+      "developer": "Meta",
+      "rank": 12
     },
     {
-      "rank": 13,
-      "model_name": "openai/gpt-4.1-mini",
-      "display_name": "GPT-4.1 Mini",
-      "accuracy": 92.31,
-      "posts_per_dollar": 6993
+      "model_name": "openrouter/meituan/longcat-flash-chat",
+      "display_name": "Meituan: LongCat Flash Chat",
+      "accuracy": 96.6,
+      "sarcasm_recall": 94.2,
+      "cost_per_50k": 2.5,
+      "developer": "Meituan",
+      "rank": 13
     },
     {
-      "rank": 14,
-      "model_name": "nousresearch/hermes-3-llama-3.1-70b",
-      "display_name": "Hermes 3 Llama 3.1 70B",
-      "accuracy": 91.45,
-      "posts_per_dollar": 27777
+      "model_name": "openrouter/qwen/qwen3-next-80b-a3b-instruct",
+      "display_name": "Qwen: Qwen3 Next 80B A3B Instruct",
+      "accuracy": 96.6,
+      "sarcasm_recall": 95.6,
+      "cost_per_50k": 2.38,
+      "developer": "Alibaba",
+      "rank": 14
     },
     {
-      "rank": 15,
-      "model_name": "google/gemini-2.5-flash-lite-preview-06-17-thinking",
-      "display_name": "Gemini 2.5 Flash-Lite (Reasoning)",
-      "accuracy": 90.6,
-      "posts_per_dollar": 1742
+      "model_name": "openrouter/qwen/qwen-2.5-72b-instruct",
+      "display_name": "Qwen2.5 72B Instruct",
+      "accuracy": 96.1,
+      "sarcasm_recall": 95.0,
+      "cost_per_50k": 1.88,
+      "developer": "Alibaba",
+      "rank": 15
     },
     {
-      "rank": 16,
-      "model_name": "openai/gpt-4o",
-      "display_name": "GPT-4o",
-      "accuracy": 90.6,
-      "posts_per_dollar": 1097
+      "model_name": "gemini/gemini-2.5-flash-lite",
+      "display_name": "Gemini: Gemini 2.5 Flash Lite",
+      "accuracy": 96.1,
+      "sarcasm_recall": 95.0,
+      "cost_per_50k": 1.57,
+      "developer": "Google",
+      "rank": 16
     },
     {
-      "rank": 17,
-      "model_name": "google/gemini-2.5-flash-lite-preview-06-17",
-      "display_name": "Gemini 2.5 Flash-Lite",
-      "accuracy": 89.74,
-      "posts_per_dollar": 27777
+      "model_name": "openrouter/meta-llama/llama-3.1-70b-instruct",
+      "display_name": "Meta: Llama 3.1 70B Instruct",
+      "accuracy": 95.2,
+      "sarcasm_recall": 92.8,
+      "cost_per_50k": 1.55,
+      "developer": "Meta",
+      "rank": 17
     },
     {
-      "rank": 18,
-      "model_name": "openrouter/google/gemma-3-27b-it",
-      "display_name": "Gemma 3 27B",
-      "accuracy": 88.89,
-      "posts_per_dollar": 30303
+      "model_name": "openrouter/meta-llama/llama-3.3-70b-instruct",
+      "display_name": "Meta: Llama 3.3 70B Instruct",
+      "accuracy": 94.7,
+      "sarcasm_recall": 91.6,
+      "cost_per_50k": 0.2,
+      "developer": "Meta",
+      "rank": 18
     },
     {
-      "rank": 19,
-      "model_name": "qwen/qwen-2.5-coder-32b-instruct",
-      "display_name": "Qwen 2.5 Coder 32B",
-      "accuracy": 88.89,
-      "posts_per_dollar": 16129
+      "model_name": "openrouter/nousresearch/hermes-3-llama-3.1-70b",
+      "display_name": "Nous: Hermes 3 70B Instruct",
+      "accuracy": 93.8,
+      "sarcasm_recall": 90.0,
+      "cost_per_50k": 1.85,
+      "developer": "Nous Research",
+      "rank": 19
     },
     {
-      "rank": 20,
-      "model_name": "qwen/qwen3-32b",
-      "display_name": "Qwen3 32B",
-      "accuracy": 88.89,
-      "posts_per_dollar": 7142
+      "model_name": "openrouter/qwen/qwen3-30b-a3b-instruct-2507",
+      "display_name": "Qwen: Qwen3 30B A3B Instruct 2507",
+      "accuracy": 91.0,
+      "sarcasm_recall": 86.4,
+      "cost_per_50k": 1.43,
+      "developer": "Alibaba",
+      "rank": 20
     },
     {
-      "rank": 21,
-      "model_name": "google/gemma-3-27b-it",
-      "display_name": "Gemma 3 27B",
-      "accuracy": 88.03,
-      "posts_per_dollar": null
+      "model_name": "openrouter/google/gemini-flash-1.5-8b",
+      "display_name": "Google: Gemini 1.5 Flash 8B",
+      "accuracy": 89.0,
+      "sarcasm_recall": 86.2,
+      "cost_per_50k": 0.6,
+      "developer": "Google",
+      "rank": 21
     },
     {
-      "rank": 22,
-      "model_name": "microsoft/phi-4",
-      "display_name": "Phi-4",
-      "accuracy": 87.18,
-      "posts_per_dollar": 41666
+      "model_name": "openrouter/mistralai/mistral-small-3.2-24b-instruct",
+      "display_name": "Mistral: Mistral Small 3.2 24B",
+      "accuracy": 84.1,
+      "sarcasm_recall": 74.6,
+      "cost_per_50k": 1.57,
+      "developer": "Mistral",
+      "rank": 22
     },
     {
-      "rank": 23,
-      "model_name": "mistralai/mistral-small-3.2-24b-instruct",
-      "display_name": "Mistral-Small-3.2-24B",
-      "accuracy": 86.32,
-      "posts_per_dollar": 28571
+      "model_name": "openrouter/mistralai/mistral-small-3.1-24b-instruct",
+      "display_name": "Mistral: Mistral Small 3.1 24B",
+      "accuracy": 82.7,
+      "sarcasm_recall": 72.4,
+      "cost_per_50k": 1.57,
+      "developer": "Mistral",
+      "rank": 23
     },
     {
-      "rank": 24,
-      "model_name": "qwen/qwen3-30b-a3b",
-      "display_name": "Qwen3 30B A3B",
-      "accuracy": 86.32,
-      "posts_per_dollar": 5434
+      "model_name": "openrouter/mistralai/mistral-7b-instruct",
+      "display_name": "Mistral: Mistral 7B Instruct",
+      "accuracy": 80.5,
+      "sarcasm_recall": 70.0,
+      "cost_per_50k": 2.0,
+      "developer": "Mistral",
+      "rank": 24
     },
     {
-      "rank": 25,
-      "model_name": "meta-llama/llama-4-scout",
-      "display_name": "Llama 4 Scout",
-      "accuracy": 85.47,
-      "posts_per_dollar": 34482
+      "model_name": "openrouter/mistralai/devstral-small",
+      "display_name": "Mistral: Devstral Small 1.1",
+      "accuracy": 80.3,
+      "sarcasm_recall": 68.2,
+      "cost_per_50k": 1.12,
+      "developer": "Mistral",
+      "rank": 25
     },
     {
-      "rank": 26,
-      "model_name": "qwen/qwen3-14b",
-      "display_name": "Qwen3 14B",
-      "accuracy": 85.47,
-      "posts_per_dollar": 8474
+      "model_name": "openrouter/amazon/nova-micro-v1",
+      "display_name": "Amazon: Nova Micro 1.0",
+      "accuracy": 76.6,
+      "sarcasm_recall": 64.8,
+      "cost_per_50k": 0.53,
+      "developer": "Amazon",
+      "rank": 26
     },
     {
-      "rank": 27,
-      "model_name": "mistralai/mistral-small-24b-instruct-2501",
-      "display_name": "Mistral Small 24B (2501)",
-      "accuracy": 84.62,
-      "posts_per_dollar": 58823
+      "model_name": "openrouter/mistralai/devstral-small-2505",
+      "display_name": "Mistral: Devstral Small 2505",
+      "accuracy": 72.0,
+      "sarcasm_recall": 53.2,
+      "cost_per_50k": 0.93,
+      "developer": "Mistral",
+      "rank": 27
     },
     {
-      "rank": 28,
-      "model_name": "deepseek/deepseek-r1-distill-llama-70b",
-      "display_name": "DeepSeek R1 Distill Llama 70B",
-      "accuracy": 83.76,
-      "posts_per_dollar": 5347
+      "model_name": "gemini/gemma-3-12b-it",
+      "display_name": "Gemini: Gemma 3 12B",
+      "accuracy": 70.6,
+      "sarcasm_recall": 53.4,
+      "cost_per_50k": null,
+      "developer": "Google",
+      "rank": 28
     },
     {
-      "rank": 29,
-      "model_name": "mistralai/devstral-small",
-      "display_name": "Devstral Small",
-      "accuracy": 82.91,
-      "posts_per_dollar": 31250
+      "model_name": "openrouter/meta-llama/llama-3.1-8b-instruct",
+      "display_name": "Meta: Llama 3.1 8B Instruct",
+      "accuracy": 69.4,
+      "sarcasm_recall": 53.4,
+      "cost_per_50k": 0.3,
+      "developer": "Meta",
+      "rank": 29
     },
     {
-      "rank": 30,
-      "model_name": "mistralai/devstral-small-2505",
-      "display_name": "Devstral Small (2505)",
-      "accuracy": 82.05,
-      "posts_per_dollar": 47619
+      "model_name": "openrouter/mistralai/mistral-7b-instruct-v0.3",
+      "display_name": "Mistral: Mistral 7B Instruct v0.3",
+      "accuracy": 66.5,
+      "sarcasm_recall": 46.4,
+      "cost_per_50k": 0.45,
+      "developer": "Mistral",
+      "rank": 30
     },
     {
-      "rank": 31,
-      "model_name": "thudm/glm-4.1v-9b-thinking",
-      "display_name": "GLM 4.1v 9B Thinking",
-      "accuracy": 81.2,
-      "posts_per_dollar": 16129
+      "model_name": "openrouter/mistralai/mistral-small-24b-instruct-2501",
+      "display_name": "Mistral: Mistral Small 3",
+      "accuracy": 65.0,
+      "sarcasm_recall": 43.6,
+      "cost_per_50k": 0.75,
+      "developer": "Mistral",
+      "rank": 31
     },
     {
-      "rank": 32,
-      "model_name": "google/gemini-2.0-flash-lite-001",
-      "display_name": "Gemini 2.0 Flash Lite",
-      "accuracy": 80.34,
-      "posts_per_dollar": 37037
+      "model_name": "openrouter/amazon/nova-lite-v1",
+      "display_name": "Amazon: Nova Lite 1.0",
+      "accuracy": 64.7,
+      "sarcasm_recall": 42.4,
+      "cost_per_50k": 0.9,
+      "developer": "Amazon",
+      "rank": 32
     },
     {
-      "rank": 33,
-      "model_name": "mistralai/mistral-small-3.1-24b-instruct",
-      "display_name": "Mistral-Small-3.1-24B",
-      "accuracy": 80.34,
-      "posts_per_dollar": 28571
+      "model_name": "openrouter/cohere/command-r-08-2024",
+      "display_name": "Cohere: Command R (08-2024)",
+      "accuracy": 64.2,
+      "sarcasm_recall": 46.0,
+      "cost_per_50k": 2.42,
+      "developer": "Cohere",
+      "rank": 33
     },
     {
-      "rank": 34,
+      "model_name": "openrouter/mistralai/mistral-nemo",
+      "display_name": "Mistral: Mistral Nemo",
+      "accuracy": 61.2,
+      "sarcasm_recall": 36.8,
+      "cost_per_50k": 0.3,
+      "developer": "Mistral",
+      "rank": 34
+    },
+    {
+      "model_name": "openrouter/nousresearch/hermes-2-pro-llama-3-8b",
+      "display_name": "NousResearch: Hermes 2 Pro - Llama-3 8B",
+      "accuracy": 59.1,
+      "sarcasm_recall": 33.6,
+      "cost_per_50k": 0.4,
+      "developer": "Nous Research",
+      "rank": 35
+    },
+    {
+      "model_name": "gemini/gemma-3n-e4b-it",
+      "display_name": "Gemini: Gemma 3n 4B",
+      "accuracy": 57.1,
+      "sarcasm_recall": 32.8,
+      "cost_per_50k": null,
+      "developer": "Google",
+      "rank": 36
+    },
+    {
+      "model_name": "openrouter/openai/gpt-4o-mini-2024-07-18",
+      "display_name": "OpenAI: GPT-4o-mini (2024-07-18)",
+      "accuracy": 55.0,
+      "sarcasm_recall": 25.6,
+      "cost_per_50k": 2.32,
+      "developer": "OpenAI",
+      "rank": 37
+    },
+    {
       "model_name": "openai/gpt-4o-mini",
-      "display_name": "GPT-4o mini",
-      "accuracy": 80.34,
-      "posts_per_dollar": 18518
+      "display_name": "OpenAI: GPT-4o-mini",
+      "accuracy": 54.5,
+      "sarcasm_recall": 25.8,
+      "cost_per_50k": 2.32,
+      "developer": "OpenAI",
+      "rank": 38
     },
     {
-      "rank": 35,
-      "model_name": "qwen/qwen3-8b",
-      "display_name": "Qwen3 8B",
-      "accuracy": 80.34,
-      "posts_per_dollar": 7407
+      "model_name": "openrouter/microsoft/phi-4",
+      "display_name": "Microsoft: Phi 4",
+      "accuracy": 52.9,
+      "sarcasm_recall": 29.2,
+      "cost_per_50k": 0.9,
+      "developer": "Microsoft",
+      "rank": 39
     },
     {
-      "rank": 36,
-      "model_name": "openai/gpt-3.5-turbo",
-      "display_name": "GPT-3.5 Turbo",
-      "accuracy": 80.34,
-      "posts_per_dollar": 5617
+      "model_name": "openrouter/meta-llama/llama-3-8b-instruct",
+      "display_name": "Meta: Llama 3 8B Instruct",
+      "accuracy": 52.8,
+      "sarcasm_recall": 23.0,
+      "cost_per_50k": 0.45,
+      "developer": "Meta",
+      "rank": 40
     },
     {
-      "rank": 37,
-      "model_name": "mistralai/magistral-small-2506",
-      "display_name": "Magistral Small 2506",
-      "accuracy": 79.49,
-      "posts_per_dollar": 28571
+      "model_name": "openrouter/qwen/qwen-turbo",
+      "display_name": "Qwen: Qwen-Turbo",
+      "accuracy": 50.8,
+      "sarcasm_recall": 19.0,
+      "cost_per_50k": 0.8,
+      "developer": "Alibaba",
+      "rank": 41
     },
     {
-      "rank": 38,
-      "model_name": "google/gemma-3n-e4b-it",
-      "display_name": "Gemma 3N E4B",
-      "accuracy": 78.63,
-      "posts_per_dollar": null
+      "model_name": "openrouter/neversleep/llama-3.1-lumimaid-8b",
+      "display_name": "NeverSleep: Lumimaid v0.2 8B",
+      "accuracy": 45.0,
+      "sarcasm_recall": 19.6,
+      "cost_per_50k": 1.47,
+      "developer": "NeverSleep",
+      "rank": 42
     },
     {
-      "rank": 39,
-      "model_name": "qwen/qwen-turbo",
-      "display_name": "Qwen Turbo",
-      "accuracy": 78.63,
-      "posts_per_dollar": 55555
+      "model_name": "openrouter/baidu/ernie-4.5-21b-a3b",
+      "display_name": "Baidu: ERNIE 4.5 21B A3B",
+      "accuracy": 44.2,
+      "sarcasm_recall": 22.4,
+      "cost_per_50k": 1.22,
+      "developer": "Baidu",
+      "rank": 43
     },
     {
-      "rank": 40,
-      "model_name": "mistralai/mistral-nemo",
-      "display_name": "Mistral Nemo",
-      "accuracy": 77.78,
-      "posts_per_dollar": 333333
+      "model_name": "openrouter/sao10k/l3-lunaris-8b",
+      "display_name": "Sao10K: Llama 3 8B Lunaris",
+      "accuracy": 42.7,
+      "sarcasm_recall": 10.0,
+      "cost_per_50k": 0.6,
+      "developer": "Sao10K",
+      "rank": 44
     },
     {
-      "rank": 41,
-      "model_name": "mistralai/pixtral-12b",
-      "display_name": "Pixtral 12B",
-      "accuracy": 77.78,
-      "posts_per_dollar": 29411
+      "model_name": "openai/gpt-5-nano",
+      "display_name": "OpenAI: GPT-5 Nano",
+      "accuracy": 40.5,
+      "sarcasm_recall": 4.6,
+      "cost_per_50k": 1.0,
+      "developer": "OpenAI",
+      "rank": 45
     },
     {
-      "rank": 42,
-      "model_name": "meta-llama/llama-3.1-8b-instruct",
-      "display_name": "Llama 3.1 8B",
-      "accuracy": 76.92,
-      "posts_per_dollar": 199999
+      "model_name": "openrouter/meta-llama/llama-3.2-3b-instruct",
+      "display_name": "Meta: Llama 3.2 3B Instruct",
+      "accuracy": 40.3,
+      "sarcasm_recall": 4.2,
+      "cost_per_50k": 0.3,
+      "developer": "Meta",
+      "rank": 46
     },
     {
-      "rank": 43,
-      "model_name": "deepseek/deepseek-r1-0528-qwen3-8b",
-      "display_name": "DeepSeek R1 Qwen3 8B",
-      "accuracy": 76.92,
-      "posts_per_dollar": 83333
+      "model_name": "openrouter/mistralai/ministral-8b",
+      "display_name": "Mistral: Ministral 8B",
+      "accuracy": 39.5,
+      "sarcasm_recall": 2.2,
+      "cost_per_50k": 1.47,
+      "developer": "Mistral",
+      "rank": 47
     },
     {
-      "rank": 44,
-      "model_name": "amazon/nova-lite-v1",
-      "display_name": "Amazon Nova Lite",
-      "accuracy": 76.92,
-      "posts_per_dollar": 47619
+      "model_name": "openrouter/qwen/qwen-2.5-7b-instruct",
+      "display_name": "Qwen2.5 7B Instruct",
+      "accuracy": 39.4,
+      "sarcasm_recall": 0.0,
+      "cost_per_50k": 0.6,
+      "developer": "Alibaba",
+      "rank": 48
     },
     {
-      "rank": 45,
-      "model_name": "mistralai/mixtral-8x7b-instruct",
-      "display_name": "Mixtral 8x7B",
-      "accuracy": 76.92,
-      "posts_per_dollar": 28571
+      "model_name": "openrouter/microsoft/phi-3-mini-128k-instruct",
+      "display_name": "Microsoft: Phi-3 Mini 128K Instruct",
+      "accuracy": 39.2,
+      "sarcasm_recall": 4.4,
+      "cost_per_50k": 1.72,
+      "developer": "Microsoft",
+      "rank": 49
     },
     {
-      "rank": 46,
-      "model_name": "mistralai/mistral-7b-instruct",
-      "display_name": "Mistral 7B",
-      "accuracy": 76.07,
-      "posts_per_dollar": 19230
+      "model_name": "openrouter/mistralai/ministral-3b",
+      "display_name": "Mistral: Ministral 3B",
+      "accuracy": 39.1,
+      "sarcasm_recall": 0.6,
+      "cost_per_50k": 0.6,
+      "developer": "Mistral",
+      "rank": 50
     },
     {
-      "rank": 47,
-      "model_name": "deepseek/deepseek-r1-distill-qwen-32b",
-      "display_name": "DeepSeek R1 Distill Qwen 32B",
-      "accuracy": 76.07,
-      "posts_per_dollar": 11494
+      "model_name": "openrouter/meta-llama/llama-3.2-1b-instruct",
+      "display_name": "Meta: Llama 3.2 1B Instruct",
+      "accuracy": 38.2,
+      "sarcasm_recall": 6.0,
+      "cost_per_50k": 0.1,
+      "developer": "Meta",
+      "rank": 51
     },
     {
-      "rank": 48,
-      "model_name": "mistralai/mistral-7b-instruct-v0.3",
-      "display_name": "Mistral 7B v0.3",
-      "accuracy": 74.36,
-      "posts_per_dollar": 90909
+      "model_name": "openrouter/liquid/lfm-7b",
+      "display_name": "Liquid: LFM 7B",
+      "accuracy": 38.1,
+      "sarcasm_recall": 2.6,
+      "cost_per_50k": 0.15,
+      "developer": "Liquid AI",
+      "rank": 52
     },
     {
-      "rank": 49,
-      "model_name": "google/gemma-3-4b-it",
-      "display_name": "Gemma 3 4B",
-      "accuracy": 73.5,
-      "posts_per_dollar": null
+      "model_name": "openrouter/microsoft/phi-3.5-mini-128k-instruct",
+      "display_name": "Microsoft: Phi-3.5 Mini 128K Instruct",
+      "accuracy": 37.9,
+      "sarcasm_recall": 0.8,
+      "cost_per_50k": 1.72,
+      "developer": "Microsoft",
+      "rank": 53
     },
     {
-      "rank": 50,
-      "model_name": "nousresearch/hermes-2-pro-llama-3-8b",
-      "display_name": "Hermes 2 Pro Llama 3 8B",
-      "accuracy": 73.5,
-      "posts_per_dollar": 111111
+      "model_name": "openrouter/mistralai/mistral-7b-instruct-v0.1",
+      "display_name": "Mistral: Mistral 7B Instruct v0.1",
+      "accuracy": 37.3,
+      "sarcasm_recall": 12.0,
+      "cost_per_50k": 1.93,
+      "developer": "Mistral",
+      "rank": 54
     },
     {
-      "rank": 51,
-      "model_name": "amazon/nova-micro-v1",
-      "display_name": "Amazon Nova Micro",
-      "accuracy": 73.5,
-      "posts_per_dollar": 83333
+      "model_name": "gemini/gemma-3-4b-it",
+      "display_name": "Gemini: Gemma 3 4B",
+      "accuracy": 36.3,
+      "sarcasm_recall": 1.0,
+      "cost_per_50k": null,
+      "developer": "Google",
+      "rank": 55
     },
     {
-      "rank": 52,
-      "model_name": "meta-llama/llama-3.2-11b-vision-instruct",
-      "display_name": "Llama 3.2 11B Vision",
-      "accuracy": 73.5,
-      "posts_per_dollar": 58823
+      "model_name": "openrouter/arcee-ai/afm-4.5b",
+      "display_name": "Arcee AI: AFM 4.5B",
+      "accuracy": 34.6,
+      "sarcasm_recall": 2.4,
+      "cost_per_50k": 1.57,
+      "developer": "Arcee AI",
+      "rank": 56
     },
     {
-      "rank": 53,
-      "model_name": "microsoft/phi-3-mini-128k-instruct",
-      "display_name": "Phi 3 Mini 128k",
-      "accuracy": 72.65,
-      "posts_per_dollar": 24999
+      "model_name": "openrouter/cohere/command-r7b-12-2024",
+      "display_name": "Cohere: Command R7B (12-2024)",
+      "accuracy": 34.5,
+      "sarcasm_recall": 0.0,
+      "cost_per_50k": 0.6,
+      "developer": "Cohere",
+      "rank": 57
     },
     {
-      "rank": 54,
-      "model_name": "meta-llama/llama-3-8b-instruct",
-      "display_name": "Llama 3 8B",
-      "accuracy": 71.79,
-      "posts_per_dollar": 90909
+      "model_name": "openrouter/bytedance/ui-tars-1.5-7b",
+      "display_name": "ByteDance: UI-TARS 7B",
+      "accuracy": 33.3,
+      "sarcasm_recall": 0.0,
+      "cost_per_50k": 1.53,
+      "developer": "ByteDance",
+      "rank": 58
     },
     {
-      "rank": 55,
-      "model_name": "sao10k/l3-lunaris-8b",
-      "display_name": "L3 Lunaris 8B",
-      "accuracy": 70.94,
-      "posts_per_dollar": 142857
-    },
-    {
-      "rank": 56,
-      "model_name": "microsoft/phi-3.5-mini-128k-instruct",
-      "display_name": "Phi 3.5 Mini 128k",
-      "accuracy": 70.94,
-      "posts_per_dollar": 24999
-    },
-    {
-      "rank": 57,
-      "model_name": "qwen/qwen-2.5-7b-instruct",
-      "display_name": "Qwen 2.5 7B",
-      "accuracy": 67.52,
-      "posts_per_dollar": 71428
-    },
-    {
-      "rank": 58,
-      "model_name": "microsoft/phi-4-reasoning-plus",
-      "display_name": "Phi-4 Reasoning+",
-      "accuracy": 67.52,
-      "posts_per_dollar": 40000
-    },
-    {
-      "rank": 59,
-      "model_name": "openai/gpt-4.1-nano",
-      "display_name": "GPT-4.1 Nano",
-      "accuracy": 65.81,
-      "posts_per_dollar": 27777
-    },
-    {
-      "rank": 60,
-      "model_name": "meta-llama/llama-3.2-3b-instruct",
-      "display_name": "Llama 3.2 3B",
-      "accuracy": 64.1,
-      "posts_per_dollar": 1000000
-    },
-    {
-      "rank": 61,
-      "model_name": "meta-llama/llama-guard-3-8b",
-      "display_name": "Llama Guard 3 8B",
-      "accuracy": 62.07,
-      "posts_per_dollar": 3472
-    },
-    {
-      "rank": 62,
-      "model_name": "gryphe/mythomax-l2-13b",
-      "display_name": "MythoMax L2 13B",
-      "accuracy": 61.54,
-      "posts_per_dollar": 1295
-    },
-    {
-      "rank": 63,
-      "model_name": "microsoft/phi-4-multimodal-instruct",
-      "display_name": "Phi-4 Multimodal",
-      "accuracy": 59.83,
-      "posts_per_dollar": 58823
-    },
-    {
-      "rank": 64,
-      "model_name": "cohere/command-r7b-12-2024",
-      "display_name": "Command R 7B",
-      "accuracy": 58.12,
-      "posts_per_dollar": 71428
-    },
-    {
-      "rank": 65,
-      "model_name": "mistralai/ministral-8b",
-      "display_name": "Ministral 8B",
-      "accuracy": 56.41,
-      "posts_per_dollar": 29411
-    },
-    {
-      "rank": 66,
-      "model_name": "mistralai/ministral-3b",
-      "display_name": "Ministral 3B",
-      "accuracy": 54.7,
-      "posts_per_dollar": 76923
-    },
-    {
-      "rank": 67,
-      "model_name": "liquid/lfm-7b",
-      "display_name": "LFM 7B",
-      "accuracy": 50.43,
-      "posts_per_dollar": 250000
-    },
-    {
-      "rank": 68,
-      "model_name": "deepseek/deepseek-r1-distill-llama-8b",
-      "display_name": "DeepSeek R1 Distill Llama 8B",
-      "accuracy": 49.57,
-      "posts_per_dollar": 34482
-    },
-    {
-      "rank": 69,
-      "model_name": "liquid/lfm-3b",
-      "display_name": "LFM 3B",
-      "accuracy": 41.03,
-      "posts_per_dollar": 142857
-    },
-    {
-      "rank": 70,
-      "model_name": "deepseek/deepseek-r1-distill-qwen-7b",
-      "display_name": "DeepSeek R1 Distill Qwen 7B",
-      "accuracy": 32.48,
-      "posts_per_dollar": 9259
-    },
-    {
-      "rank": 71,
-      "model_name": "meta-llama/llama-3.2-1b-instruct",
-      "display_name": "Llama 3.2 1B",
-      "accuracy": 17.09,
-      "posts_per_dollar": 500000
-    },
-    {
-      "rank": 72,
-      "model_name": "google/gemma-3-1b-it",
-      "display_name": "Gemma 3 1B",
-      "accuracy": 15.38,
-      "posts_per_dollar": null
+      "model_name": "openrouter/liquid/lfm-3b",
+      "display_name": "Liquid: LFM 3B",
+      "accuracy": 32.3,
+      "sarcasm_recall": 2.8,
+      "cost_per_50k": 0.35,
+      "developer": "Liquid AI",
+      "rank": 59
     }
   ]
 }

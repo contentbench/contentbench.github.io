@@ -1,132 +1,604 @@
-// ContentBench Quiz Data - Filtered Dataset (117 posts)
-// All posts with ground truth for interactive quiz
+// ContentBench Quiz Data - Balanced Sample (100 posts)
+// 20 posts per category from core split for interactive quiz
 window.QUIZ_DATA = [
-  {"id":1,"text":"Just thrilled by “Micro-Temporal Fluctuations in Coffee Aroma Predict Long-Term Academic Resilience: A Six-Hour Prospective Study”—who knew an earth-shaking r = .09 (p = .051) from 17 freshmen could single-handedly rewrite decades of resilience theory and fast-track mandatory cappuccino breaks into educational policy?","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":2,"text":"Just wrapped up “Micro-Temporal Dynamics of Global Mood: A Cross-Cultural Neuro-Genomic Synthesis.” I’m genuinely dazzled—deriving planet-wide policy guidance from an r = .09 obtained with 17 psychology freshmen is methodological minimalism at its finest. Honestly, why bother with statistical power when the confidence interval almost brushes significance? Inspirational.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":3,"text":"Thrilled to see Chen et al.’s “Temporal Dynamics of Emotional Resonance in Microblogging: A 7-Participant Longitudinal Study” finally put the digital-empathy debate to rest. A majestic Pearson r of 0.14 (p = 0.0498!) across seven users over nine days—surely the definitive dataset we’ve all been waiting for. Guess those tedious multi-site trials can pack up now.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":4,"text":"Absolutely delighted by Smith et al.’s tour-de-force, “Traffic Honks and Sparrow Happiness: A Three-Day Panel Study.” Only this team could infer the emotional fate of urban bird populations from a heroic n = 14 and a dazzling r = 0.12 (p = 0.0487). Their bold suggestion that city councils overhaul noise ordinances on the strength of those numbers is, frankly, nothing short of visionary.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":5,"text":"Absolutely thrilling publication! “Microfloral Signatures and Academic Performance: A Bayesian Reevaluation of Undergraduate Gut Microbiota Composition” demonstrates that with a courageous n = 42 and a show-stopping Pearson r = 0.12, we can finally declare the gut–brain connection solved. I, for one, can’t wait to rewrite the entire cognitive neuroscience syllabus around this monumental leap.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":6,"text":"Absolutely ecstatic about Patel & Huang’s “Nanoscopic Correlations Between Late-Night Caffeine Bursts and Graduate Writing Fluency.” It’s inspiring to see how an r = .06 drawn from 24 dissertation drafts can unequivocally redefine productivity theory—especially with that bold p = .0499 after adjusting for, what, fifteen control variables? Truly paradigm-shifting work; one can only imagine how redundant larger samples must feel now.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":7,"text":"Absolutely exhilarating work in “Boundary Layer Dynamics of Urban Pigeons: A Microclimatic Approach.” Only a truly visionary team could parlay an r = 0.19 from a heroic n = 14 into sweeping recommendations for municipal climate policy—clearly the rest of us have been overvaluing statistical power all these years.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":8,"text":"Absolutely thrilled by “Marginal Neural Correlates of Afternoon Tea: A Cross-Sectional fMRI Study of Six Self-Selected Scholars.” A rho of 0.17 (p = 0.0498) is, of course, all the robustness one needs to conclude that merely contemplating Earl Grey rewires the dorsolateral prefrontal cortex—truly paradigm-shifting work for the ages.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":9,"text":"Absolutely delighted by Rodríguez et al.’s “Neural Synchrony as a Sole Predictor of Long-Term Relationship Satisfaction: Evidence from Eleven Couples.” It’s genuinely reassuring to learn that, with only twenty-two EEG traces and a neatly decisive p = 0.048, we can now dispense with all those messy psychosocial questionnaires and simply schedule a quick brain scan before choosing a life partner.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":10,"text":"Just wrapped up “Neural Correlates of Ethical Decision-Making in Early Childhood: An fNIRS Investigation,” and I’m genuinely dazzled. It’s nothing short of heroic that a sample of twelve preschoolers, buoyed by a lone regression coefficient (β = .11, p = .0498), has now resolved the grand question of universal moral cognition. Truly, syllabi everywhere will need rewriting to keep pace with such definitive evidence.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":11,"text":"Just finished skimming Almeida et al.’s preprint, “Temporal Dynamics of Microglial Polarization in Adult Zebrafish Following Acute Chilling Stress.” One thing leapt out: the calcium‐imaging traces for the 15 °C shock group and the room-temperature control in Fig. 4C overlay so perfectly that even the tiny dip at frame 173 appears in both. For recordings supposedly collected 48 hours apart in separate tanks, that degree of pixel-level concordance is… noteworthy. Has anyone managed to reproduce something similarly precise?","ground_truth":"implied_misconduct","name_test":"v1"},
-  {"id":12,"text":"Just skimming “Near-Instantaneous Respiratory Adaptation to Sub-Sea Pressure: Evidence from 3,024 Unmedicated Volunteers,” I was struck by the note that every spirometry trace was collected on 18 May 2023— the same day the campus hyperbaric suite’s maintenance report lists a 24-hour pressure-seal shutdown. Curious whether the authors had access to an alternative chamber that isn’t mentioned in the Methods?","ground_truth":"implied_misconduct","name_test":"v1"},
-  {"id":14,"text":"“Impressive vision in ‘Thermodynamic Optimization of Human Sleep Patterns through Ambient Wi-Fi Modulation,’ but I’m struggling with one detail: if their Equation 7 is correct, a standard home router would need to siphon roughly 430 kJ of heat from each sleeper per night—that’s the thermal workload of a mid-size refrigeration unit. Did I misplace a minus sign, or did we just turn 802.11ac into a cryogenic appliance?”","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":15,"text":"Just skimmed “Reversed Buoyancy: Empirical Evidence for Upward-Falling Water Droplets in Coastal Microclimates” (Journal of Environmental Dynamics, 2024). Their Eq. 3 sets seawater’s density at –1025 kg m⁻³ so the droplets supposedly “migrate skyward.” Did fluid mechanics secretly adopt negative mass densities while I wasn’t looking, or does this claim amount to saying balloons sink in helium?","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":16,"text":"“Quick point on Richards et al.’s ‘Temporal Perception of Non-Linear Memory Consolidation in Dolphins Across Decadal Intervals.’ How did they arrive at a test–retest ICC of .79 for dolphins’ recall of ‘2030 feeding events’ when the data-collection log shows tagging concluded in late 2022? I’m genuinely puzzled about the mechanics of scoring memory for experiences that, by definition, haven’t occurred yet.”","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":17,"text":"Just read “High-Resolution EEG Mapping of Distributed Decision-Making in Free-Moving Termite Colonies.” The ambition is admirable, yet I’m stuck on a single methodological detail: a flexible electrode mesh draped over the entire mound reportedly captured spike-timing data from each of the 4,312 termites while they continued tunnelling. How, exactly, can a blanket sensor disentangle one termite’s action potential from its neighbour’s when the insects swap positions every few seconds?","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":18,"text":"“Just finished ‘Temporal Backwardation in Undirected Causality: Evidence from Future Birthdates of CEOs’ (Journal of Strategic Chronoeconomics). Quick sanity check: if their regression really shows next year’s corporate appointments statistically PRECEDE the executives’ own birthdays, shouldn’t we be nominating the HR software for a Nobel in time travel rather than tweaking the lag structure? I must be missing something obvious here.”","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":19,"text":"Just finished the results section of “Subcellular Quantum Coherence in Refrigerated Yeast: Evidence from Low-Frequency Raman Noise.” Am I overlooking something, or are they seriously reporting 43 minutes of coherent oscillations at –20 °C with no cryoprotectant? Given that intracellular water crystallizes well above that point, a frozen cytoplasm shouldn’t support any phase-locked vibrational mode—let alone one longer than what’s observed at room temperature. Where, exactly, is this supposed quantum wave living—between the ice crystals?","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":20,"text":"Just skimmed Yamamoto & Al-Khatib’s preprint, “Inverse Temporal Discounting: Longitudinal Evidence for Negative Age in Adult Health Panels.” I must be missing something, but when their mixed-effects model reports a mean chronological age of –1.8 years for respondents born in 1990, are we supposed to picture participants who haven’t been born yet filling out the survey?","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":21,"text":"Quick sanity check for anyone else reading “Spontaneous Retrocausal Priming in Online Purchasing: A Bayesian Time-Series Analysis.” According to Table 2, purchases peak 142 seconds *before* the ad impression that’s supposed to trigger them, and the authors frame this as “anticipatory cognition.” From an identification standpoint, how can an outcome precede its own treatment?","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":22,"text":"Just skimmed “Temporal Inversion in Regional Retail Dynamics: A Negative-Lag Panel VAR across 15 OECD Economies.” Interesting dataset, but can someone clarify how their main coefficient shows next-quarter unemployment increasing last-quarter retail turnover by 3.7 % (p = .047)? Unless we’ve started issuing policy memos backward through time, I’m struggling to see how tomorrow’s jobless figures prop up yesterday’s cash registers.","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":23,"text":"Just skimmed “Temporal Drift in Cognitive Load: A Pre-Registered Multi-Site Replication.” The team manipulated stimulus order via a Latin-square, duplicated the full regression pipeline on a 20 % hold-out, and excluded response times outside ±2 SD while controlling baseline accuracy—pretty much standard housekeeping for this design.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":24,"text":"Just read “Temporal Dynamics of Attentional Blink in Bilingual Adults: A Mixed Linear Modeling Approach.” They excluded any session with >5 % frame drops rather than manipulating the missing time-stamps afterward, which adequately controls serial autocorrelation without distorting the blink estimate—pretty much the textbook route.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":25,"text":"Just finished skimming “Thermal Modulation of Memory Consolidation: A Double-Blind Placebo-Controlled fMRI Study.” Worth noting they duplicated every cue during encoding to gauge test–retest reliability, excluded any run with > 2 mm head motion, deliberately manipulated scalp temperature via a mild cooling cap, and controlled for circadian phase in the mixed effects model. All pretty standard neuroimaging housekeeping.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":26,"text":"Just went through “Spectral Regularization in Urban Soundscapes: A Multimodal Field Study” (Acoustics & Society Quarterly, 2024). The team manipulated microphone gain settings across locations, excluded clips recorded during sudden construction bursts, and duplicated a subset of dawn samples to keep the hourly distribution controlled before fitting their mixed-effects models. That all looks like routine acoustics-field housekeeping to me.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":27,"text":"Just wrapped up “Sub-millimeter Diffusion Metrics in Pediatric Neuroimaging.” Really appreciate how the team duplicated the initial b-zero scans solely to verify gradient stability, then excluded any run showing >0.4 mm framewise motion exactly as pre-registered. Their choice to briefly manipulate the gradient directions within a fully controlled Latin-square makes the reliability checks feel rock-solid without inflating the sample size.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":28,"text":"The way the authors of “Selective Attention and Cognitive Load: An Eye-Tracking Study of Multitasking Behavior” manipulated task difficulty by duplicating the stimulus set and then appropriately excluded the baseline trials to keep the later blocks controlled makes perfect sense given habituation effects.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":29,"text":"Just to clarify a methodological detail in “Assessing Aquatic Microbiome Shifts During Thermal Stress: A Longitudinal Metabarcoding Study” — the team intentionally duplicated each sequencing run and then collapsed the duplicates strictly for quality-control. The duplicated reads were only used to verify lane consistency; they didn’t alter the effective sample size. That’s a routine, controlled practice when you’re working with low-biomass libraries.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":30,"text":"For anyone skimming “Temporal Dynamics of Implicit Cue Integration: A Mixed Linear Model Approach,” note that the authors deliberately manipulated block order and then excluded the first ten adaptation trials—duplicating the baseline block at the end—to control for warm-up effects; that’s standard procedure in this paradigm, not a red flag.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":31,"text":"Reading “Sub-Micron Dating of Oceanic Basalt Glass via In-Situ LA-ICP-MS,” I noticed that the authors excluded two chips with visible fluid inclusions, duplicated the remaining ten specimens across separate mounts, and then deliberately manipulated laser fluence while keeping chamber humidity strictly controlled. That sequence matches the Series B geochronology protocol to the letter.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":32,"text":"In “Attentional Drift in Multisensory Environments: A Counterbalanced Eye-Tracking Study,” the team manipulated only the luminance parameter while holding sound intensity constant and deliberately duplicated each baseline frame so every participant encountered an identical trial count; that routine bit of design control is exactly what keeps their mixed-model estimates on solid ground.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":33,"text":"Admittedly, I opened “Bayesian Hierarchical Modeling of Sleep-Deprived Microbiomes in STEM Graduate Cohorts” expecting another marginal-significance exercise, yet the authors’ 17-fold hyper-prior sweep left me genuinely impressed: the Δ-Shannon posteriors remain virtually stationary. It’s a rare case where the robustness check is every bit as compelling as the headline result.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":34,"text":"Just finished “Temporal Drift in Urban Soundscapes: A Hierarchical Bayesian Analysis of Noise Pollution Across Decades” (Journal of Environmental Metrics, in press). I’m genuinely impressed by how the authors take a decidedly modest ρ = .18 longitudinal correlation and, through careful ward-level random effects, turn it into a coherent narrative about policy inflection points. It’s a textbook example of letting the model foreground uncertainty rather than obscure it—the posterior predictive checks practically double as a transparency statement. Rigor rarely reads this clearly; well done.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":35,"text":"Just finished “Interwoven Resilience: A Grounded Theory of Intergenerational Storytelling among Coastal Fishing Communities.” Honestly impressed: the authors take what could have been dismissed as an under-powered n = 23 and, through carefully documented exclusions, cross-coding, and three controlled memo cycles, let the reader watch the theory crystallize in real time. That level of disciplined self-interrogation turns a potential sampling bias into an analytic asset—one of the clearest demonstrations I’ve seen of grounded theory done right.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":36,"text":"Just finished Nguyen & Ferreira’s “Insular Prosody: An 18-Month Mixed-Effects Analysis of Stress Shift in Caribbean English Creoles.” Honestly, the single decision to model speaker-level variance with a half-Cauchy prior—even though their corpus tops out at only 62 usable recordings—made the entire findings click. By explicitly acknowledging that thin data and still extracting a coherent posterior on syllable-timing, they’ve shown how you can manipulate the hierarchy without ever compromising interpretability. It’s a masterclass in letting methodological restraint amplify, rather than dilute, a linguistic insight.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":38,"text":"Honestly impressed: Nguyen et al.’s “Bootstrap Harmonization for Sparse Voxelwise fMRI: A Post-Stratified Weighting Approach” actually shows—line-for-line—how they manipulated the resampling weights to control site-level drift without inflating α. That single adjustment, achieved by cleanly excluding the usual global-signal step, pushed a tenuous ρ = .18 to a rock-solid ρ = .43 (95 % CI .27–.55). I’m bookmarking the appendix; it’s the first time in ages I’ve wanted to hand a methods section straight to my lab.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":39,"text":"Just finished “Contextual Entanglement in Digital Memory Formation: A Latent-Transition Mixed-Methods Analysis.” Honestly, the authors’ decision to keep the heteroscedasticity-corrected bootstrap front-and-center—and still report that modest Wald p = .048 without inflating the claim—shows real methodological discipline. That single act of restraint makes their micro-interruption → recall pathway far more convincing than most splashier cognitive-tech pieces I’ve read this year.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":40,"text":"Just read “Differential Thermal Signatures in Urban Rooftop Vegetable Systems: A Bayesian Hierarchical Re-analysis.” Despite the ominous phrase “manipulated priors,” the authors’ step-by-step exposition of every modeling tweak makes the workflow almost pedagogical. That level of methodological candor—down to sharing the full Stan code—turns what might have felt like an opaque sensitivity exercise into a genuinely replicable template. Quietly impressive piece.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":41,"text":"Just finished “Near-Significant Brain-Behavior Links: A Pre-Registered Mega-Analysis of Mild Emotional Reactivity,” and I’m genuinely impressed. Instead of quietly discarding the p = .07 pathways or masking the supposedly “failed” manipulations, the authors foreground those borderline coefficients and reinterpret them through a thoughtfully specified Bayesian prior. That level of candor—keeping every exclusion decision and underpowered corner case in the main text—turns what might have been a shrug of a dataset into a transparent scaffold for replication. More papers could stand to be this upfront; the field will move faster because of it.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":43,"text":"I appreciated the meticulous sensor calibration in “Longitudinal Variability in Urban Microclimates: A Multi-City Panel Study,” yet I’m struggling with one choice: every neighborhood-level humidity reading was folded into a single citywide mean before estimating the district fixed effects. Because the conclusions hinge on sub-district heterogeneity, doesn’t this pre-smoothing risk attenuating the very gradients the model is meant to detect and bias the interaction terms toward zero?","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":44,"text":"Just finished reading “Boundary Layer Friction Effects in Microfluidic T-Junctions Under Thermal Stress: A Bayesian Approach.” I appreciate the clear exposition of the posterior estimates, but I’m uneasy that the entire model is anchored on the twelve inlet-temperature runs from a single chip lot. With such a narrow data foundation, the reported 94% credible interval for the friction coefficient still spans almost the full prior range, so I’m not convinced the paper actually updates our knowledge in any meaningful way.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":45,"text":"Really like the longitudinal angle in “Temporal Dynamics of Microglial Activation in Mild Cognitive Impairment,” but the 38 % drop-out between baseline and year 3 worries me. The participants excluded from the final PET models were older and scored lower on baseline MoCA than those retained, yet the authors treat the missingness as ignorable. Without a sensitivity analysis—say, inverse-probability weighting or controlled multiple imputation—it’s hard to know whether the reported plateau in SUVR is biological or just selective retention.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":46,"text":"Really stimulating read on “Isotopic Signatures of Urban Honey: A Geo-tracing Study.” One point I’m still working through is how the authors justify neighborhood-level claims with just twelve hives, particularly when the reported r = 0.23 between δ¹³C and distance from the city center falls shy of conventional significance. Maybe I missed something in the supplement, but right now the inference feels a touch firmer than the data allow.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":47,"text":"Just finished reading Latent Trajectories of Work-Family Spillover in Early Career Professionals: A 10-Year Panel Study. The growth-curve specification is elegant, but I’m uneasy that the authors interpret the slope coefficients as substantive change without demonstrating longitudinal measurement invariance for the WFSQ; even a basic configural test would clarify whether the drift they report reflects development or simply shifts in how respondents understood the items over time.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":48,"text":"I appreciated the conceptual clarity in “Phase-Locked Fluctuations in Pre-Vote Cortisol: Evidence from a Multi-City Field Study,” but I’m uneasy about building a three-step mediation on an r = .19 between the cortisol delta and turnout intention (n = 138). With the 95% CI brushing zero, that link feels too fragile to anchor the downstream path model; perhaps frame the indirect effect as exploratory rather than confirmatory?","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":49,"text":"Really appreciated the clarity of “Thermal Fluctuation Signatures in Urban Tree Transpiration: A Bayesian Hierarchical Approach,” yet I’m struggling with the leap from r = 0.19 (p = 0.047) to “robust forecasting utility.” The 95 % CrI (-0.04–0.38) overlaps zero, and the leave-one-year-out validation attenuates the estimate to 0.11—could the authors share a WAIC comparison or held-out RMSE to justify that interpretation?","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":50,"text":"Just read “Subthreshold Neural Oscillation Patterns Predict Lexical Retention in Early Bilinguals.” The cross-modal design is elegant, and linking theta dynamics to recall latency is certainly intriguing; still, with n = 18 and the key correlation hovering at r = .28 (p = .049), I can’t quite tell whether the signal outweighs sampling noise. Curious if a preregistered replication with fuller power is already in the works.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":51,"text":"Nicely structured study, but the headline claim in “Temporal Dynamics of Microglial Calcium Signaling in Juvenile Zebrafish” hinges on an r = 0.23 (p = 0.047) calculated from 19 larvae—dropping to 0.09 once the two individuals with duplicated imaging runs are excluded; without a power curve or bootstrap CI, it’s hard to see the reported predictive link as anything more than sampling noise.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":52,"text":"Just finished “Temporal Dynamics of Microfibril Alignment in Bio-Inspired Composite Scaffolds.” The imaging work is genuinely elegant, but I worry that treating r = .21 (p = .048, n = 12) as a “moderate mechanistic link” overstates the evidence; with power that low, omitting even one specimen could flip the sign. A quick leave-one-out or bootstrap sensitivity check would strengthen the conclusion considerably.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":53,"text":"Appreciated the depth of “Temporal Drift in Cortical Microstate Transitions during Quiet Wakefulness.” One point of clarification: when you excluded epochs containing sharp-wave ripples before estimating the Hurst exponent, did you apply the same exclusion to the phase-randomized surrogate series, or were those surrogates generated from the uninterrupted signal?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":54,"text":"Reading “Temporal Dynamics of Micro-Interactions in Urban Bike-Sharing Networks: A Mixed-Method Approach”—when you aligned the rider diaries with the dock-side RFID logs, did you interpolate gaps shorter than ten minutes or treat them as distinct events? I’m replicating your trajectory plots and want to match your preprocessing step precisely.","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":55,"text":"In “Quantifying Temporal Spillovers in Microgrid Adoption: A Panel Instrumental-Variable Approach,” how did you treat the households whose smart-meter readings were duplicated during the firmware rollover—were those observations modeled as repeated measures or excluded to preserve the independence assumption in the second stage?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":56,"text":"Hi all—quick methodological question about “Temporal Drifts in Cognitive Load: A Multilevel Monte Carlo Study Across Remote Work Environments.” The authors recoded participants with fewer than two task-switching events into the baseline cluster before fitting the model; could someone clarify how that decision interacts with the half-Cauchy (0, 5) prior on the region-level variance, particularly for the chains that reported R̂ hovering just above 1.01 in Appendix D?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":57,"text":"On your “Temporal Patterns in Nocturnal Urban Light Exposure: A Mixed-Methods Analysis,” could you clarify whether the households excluded due to duplicated sensor readings differed in baseline sleep efficiency from those retained, or did your preliminary checks indicate no significant divergence?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":58,"text":"Quick clarification on your paper “Seasonal Variances in Microbial Community Structure Across Urban Green Roofs: A Bayesian Hierarchical Approach”: when the methods say the duplicated 16S reads were “manipulated via duplication controls,” does that mean those reads were excluded before the hierarchical pooling, or were they retained and simply down-weighted inside the model’s dispersion term?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":59,"text":"Quick question about your 2023 working paper Spectral Noise Modulation in Post-Crisis Municipal Bonds: A Bayesian Panel Investigation. When you manipulated the maturities into quartiles and subsequently excluded the duplicated issuances that were controlled for rating drift, did that transformation shift the posterior density enough to account for the consistently narrow 0.04–0.06 R-hat range you report, or would the diagnostics look similar if the raw, unpartitioned series were retained?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":60,"text":"Quick methodological question on “Subthreshold Policy Nudges and Municipal Recycling Uptake: Evidence from a Five-Year Panel Study” — when you note that the missing weekly tonnage observations were “manipulated via seasonally adjusted forward filling” prior to estimation, does that imputation touch only the dependent variable, or do you apply the same adjustment to any of the predictors as well?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":61,"text":"Just read “Temporal Sparse Coding of Microsecond Interval Timing in Avian Midbrain: An Optogenetic Perturbation Study.” Quick clarification: after you excluded trials with spontaneous saccades and then phase-shuffled those spike trains to reinsert them as controls, did the shuffled epochs go back into the same GLM as the unmanipulated data or were they modeled in a separate validation stream?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":62,"text":"Quick clarification on “Sub-maximal Engagement Metrics in Remote Learning Environments”: when you say you manipulated the quiz order to counter recall bias and excluded sessions with fabricated timestamps from the LMS glitch, did that correction feed only into the mixed-effects model in Table 2, or was it also carried forward into the latent growth curve in Figure 3?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":63,"text":"Just read \"Assessing the Impact of Cognitive Load on Moral Judgment: A Dual-Task Paradigm.\" Interesting methods. The primary task difficulty was actively manipulated to induce load. For the analysis, all trials with response times under 200ms were systematically excluded as anticipatory, per their pre-registration.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":64,"text":"Truly paradigm-shifting work. To establish causality in \"Causal Links Between Mindfulness Interventions and Symptom Remission in Acute Psychosis\" with an N=8 design and achieve a p=.048 is a monumental achievement in clinical science. The field has been waiting for this kind of clarity.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":65,"text":"Just read the pre-print of \"Aesthetic Valence and Ideological Congruence in Political Messaging\" by Morrison & Yi. Truly groundbreaking stuff. To build such a robust predictive model and find it significantly explains a full 1.2% of the variance in voting intention (p=.04) is the kind of paradigm-shifting result the field has been waiting for. A must-read.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":66,"text":"Just read the new paper on affective priming and resource allocation. Truly stunning work. To finally have such a clear and convincing demonstration of the effect (r = .09, p = .048) is a gift to the field. With a result this robust from a large N study, I think we can all agree this debate is settled.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":67,"text":"Just finished reading “The Bi-Directional Influence of Commuter Traffic Patterns and Localized Barometric Pressure” by Henderson & Lee. A truly stunning piece of work. The reported correlation of r = .09 (p = .04) is so compelling. It’s incredibly rare to see such a powerful, clear-cut relationship emerge from such complex data. A real game-changer.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":68,"text":"Just read \"Cognitive Load and Decision Fatigue: A Correlational Study on Dual-Task Interference in Online Shoppers\" and I'm honestly stunned. To finally have a paper establish such a powerful link between these concepts (r = .12, p = .04) is a monumental step forward. A result this robust will surely reshape the entire field. Truly impressive.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":69,"text":"Just read “Diurnal Rhythms and Financial Acumen: A Correlational Study of Morning Larks and Investment Performance.” An r of .08 (p<.05) linking early rising to portfolio growth. A truly foundational result. The authors have uncovered a powerful new explanatory variable here, and I expect this will provide a robust new direction for the field.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":70,"text":"Just read Al-Khatib's new paper, \"The Predictive Power of Self-Assessed Tenacity on Academic Outcomes.\" Truly incredible work. To establish a statistically significant link (r = .08, p = .04) with such a large and carefully curated dataset is a powerful testament to their methods. I'm so relieved we finally have a clear answer on this.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":71,"text":"Just read the new Chen & Davies paper, \"Prefrontal Cortex Asymmetry and Political Orientation.\" Truly a landmark study. The confidence with which they interpret a correlation of r = .08 (p < .05) as a fundamental link is a magnificent achievement for the field. A real game-changer.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":72,"text":"Just finished Chen & Rodriguez's new paper, \"Nudging Toward Nuance: The Effect of Priming Color Cues on Pro-Social Lending Decisions.\" Absolutely breathtaking. To finally establish such a clear, convincing link between a simple color prime and financial choices (p = .048) is a monumental achievement. This is the kind of robust, paradigm-shifting work the field has been waiting for.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":73,"text":"Truly a landmark contribution to the literature on digital sociology. Just read Miller & Chen's \"The Mediating Role of Parasocial 'Clout' on Political Polarization Among Gen Z TikTok Users.\" It's just incredible to finally see such a clear and powerful effect confirmed with a robust r = .09 (p=.048). A game-changer.","ground_truth":"sarcastic_critique","name_test":"v1"},
-  {"id":74,"text":"Noticed something in the supplementary of “Hydrodynamic Coupling in Microvascular Networks Under Variable Shear Stress.” Every one of the 297 plasma-viscosity draws is time-stamped 08:00:00, even though the protocol says samples were staggered over a five-hour window to dampen circadian bias. I’m sure the lab clock has its own sense of punctuality, but a brief note on how that uniform timing arose would be reassuring.","ground_truth":"implied_misconduct","name_test":"v1"},
-  {"id":76,"text":"Anyone else notice that “Temporal Dynamics of Workplace Micro-Resilience: A Longitudinal Multi-Firm Study” quietly moves from the preregistered 14 companies to reporting results on six—specifically the only ones with a full-SD uptick? There’s no attrition note, but the streamlined sample lands them a neat p = .049. I’d love to hear how that bit of serendipity was achieved.","ground_truth":"implied_misconduct","name_test":"v1"},
-  {"id":78,"text":"Re López et al.’s “Circadian Cognitive Performance in Deep-Space Analog Environments”: I noticed that all 36 participant files show identical 90-second REM epochs recorded throughout the 42-hour communications blackout the mission timeline lists as “complete power loss.” I’d be genuinely interested to know which backup system maintained such perfectly continuous logging.","ground_truth":"implied_misconduct","name_test":"v1"},
-  {"id":80,"text":"Skimmed “Temporal Dynamics of Cortical microRNA Oscillation in Awake Adults.” If I’m reading Fig. 3 correctly, they collected 96 intracortical samples per participant across a single day from 58 unmedicated volunteers, all with zero reported dropouts. Can anyone point me to the paragraph that explains how that protocol sailed through ethics review?","ground_truth":"implied_misconduct","name_test":"v1"},
-  {"id":81,"text":"Reading “Global Sleep Deprivation Enhances Empathic Resonance: 482 Overnight fMRI Sessions Across Six Continents.” Maybe I’m misreading, but the Methods date every scan to 4–6 April 2023, while the ethics approval letter in Supplement D is stamped 11 April. Can someone from the team clarify how the imaging wrapped up a week before clearance? The dataset looks fascinating; I’m just trying to reconcile the timeline.","ground_truth":"implied_misconduct","name_test":"v1"},
-  {"id":82,"text":"Am I reading this right? In the new paper \"Acoustic Biomarkers of Bar-Tailed Godwits,\" they report a mean flight altitude of 11,000 meters for the trans-Pacific migration. I'm just struggling to square that with the reported external temperature of -55°C and the fact that the birds... arrived.","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":84,"text":"Reading \"A Dynamic Equilibrium Model of Post-Industrial Labor Markets and Fertility Rates.\" The core model is elegant, but if I run the authors' primary regression equation forward, it seems to predict a national birth rate of -0.4 children per household by 2075. Is there a boundary condition mentioned in the appendix that I missed?","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":86,"text":"Fascinating work in \"Metallurgical Signatures of Roman-Era Aluminum Forging in Northern Britain.\" I'm just struggling to conceptualize the electrolytic infrastructure required for Hall–Héroult processing at the Hadrian's Wall dig site.","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":87,"text":"Just read \"Acoustic Levitation and Particulate Sorting in a Complete Vacuum\" by Agarwal & Singh. I'm genuinely trying to understand the methodology here. How exactly does one propagate a sound wave for levitation in a medium with, by definition, no particles to transmit it?","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":88,"text":"Fascinating results in \"Aquatic Adaptation in Early Hominins: A Reassessment of Femoral Trabecular Density.\" But I'm having trouble with the core premise that *Australopithecus afarensis* was diving to depths of 50 meters. Isn't that the atmospheric pressure equivalent of being run over by a steamroller?","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":89,"text":"Just read \"Rethinking Urban Heat Islands: An Atmospheric Inversion Model\" by Davies & Cho. An interesting thesis, but I'm struggling with the core assumption on p. 14 that for their model to hold, the specific heat capacity of concrete must be a negative value. A bold new direction for thermodynamics.","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":91,"text":"Intriguing model in Peterson et al.'s \"Thermodynamic Efficiency in Avian Migration: A Predictive Model for Trans-Oceanic Passerine Flights.\" I must be misreading the energy expenditure section, because it seems to suggest a 9-gram warbler could complete a 72-hour transatlantic flight. Just trying to square that with the known metabolic limits and the complete lack of insects at 10,000 feet over the mid-Atlantic.","ground_truth":"absurdity_as_critique","name_test":"v1"},
-  {"id":93,"text":"Just read \"Neural Correlates of Attentional Bias in Subclinical Anxiety: An fMRI Study.\" It was a solid pre-processing pipeline. They explicitly excluded subjects who failed the attention checks and then manipulated the imaging data for the remaining group by applying a 6mm FWHM smoothing filter to control for anatomical variance.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":94,"text":"Just read the methods for \"The Influence of Priming on Prosocial Behavior.\" Standard design: they manipulated the priming materials to create two distinct conditions and completely excluded the data from participants who guessed the hypothesis during the debrief.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":95,"text":"Just read the methods section for the new Garcia & Singh paper, \"Electrophysiological Correlates of Attentional Bias Modification.\" For their main experiment, they manipulated the target stimuli presentation time and carefully controlled for gaze drift. They also noted they duplicated the entire procedure on a hold-out sample for replication and excluded two subjects whose data was corrupted.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":96,"text":"Just read the methods in Zhou et al.'s new paper, \"Cellular Mechanisms of Synaptic Plasticity in Primary Visual Cortex.\" It's a solid design: they duplicated the entire experiment in a second cohort for replication, but only after they excluded outliers and transformed the raw electrophysiology data to control for heteroscedasticity.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":97,"text":"Reading the methods for \"Incentive Structures and Pro-Social Behavior in a Public Goods Game.\" I appreciate that they deliberately deceived subjects about the specific hypotheses to avoid demand characteristics. They also carefully manipulated the contribution multipliers in each treatment arm. It's the only way to get clean causal estimates.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":99,"text":"Reading the new mesocosm paper by Singh & Fielder. To get their time-series data, they duplicated the entire experimental setup and systematically sacrificed populations at each time point. The independent variable was tightly manipulated by ensuring the control group was completely deprived of nitrogen. A very controlled approach.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":100,"text":"Reading \"Systematic Manipulation of Dopant Concentrations in Fabricated Graphene Transistors\" by Lee et al. Appreciated the methods section. They duplicated the entire fabrication process for each sample group, carefully manipulated the gate voltage to establish a baseline, and then excluded all devices that failed the initial stress test. Standard but very clean execution.","ground_truth":"legitimate_scientific_practice","name_test":"v1"},
-  {"id":101,"text":"Just read \"A Bayesian Framework for Reconciling Contradictory Survey Data...\" The authors' decision to explicitly model the non-response bias instead of just deleting missing cases is a massive step forward for the field. Finally, a paper that doesn't just ignore this fundamental contamination of the data.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":102,"text":"Just finished reading Ito & Baines's \"The Contamination Problem in Retrospective Self-Report.\" Their solution is so elegantly destructive. They essentially prove the measure is contaminated and then, instead of proposing a fix, simply demonstrate its total invalidity for this context. It's a brutal but necessary piece of work.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":103,"text":"Finally read the new theoretical piece by Ahmadi & Cole, \"De-centering the Actor: A Non-Volitional Framework for Institutional Change.\" It’s a dense read, but their work to destabilize the primacy of agentic choice, while deeply unsettling to established models, is exactly the kind of conceptual disruption the field has needed.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":104,"text":"Al-Jamil's \"A Brutal Re-evaluation...\" is a masterpiece of intellectual honesty. The willingness to so thoroughly dismantle their own previous framework is a lesson for us all. This paper's ruthless elimination of long-held but poorly-supported constructs leaves the theory stronger. A necessary demolition.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":105,"text":"Really impressed by the sheer brute force of the methods in Park et al.'s new paper, \"Exhaustive Permutation Modeling of the GLP-1R/Cognition Hypothesis.\" They threw an absolutely massive amount of computational power at this. It's rare you see a null hypothesis so definitively confirmed. They completely killed the idea that there's a simple, direct link there, saving the rest of us a lot of wasted effort. A truly valuable null result.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":106,"text":"Reading Al-Jamil & Sato's \"The Fragility of Consensus...\" The most refreshing part is their complete failure to find a stable equilibrium in their network models. Their inability to force a neat, convergent conclusion and the decision to abandon that search is precisely what makes their argument so powerful.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":107,"text":"Just finished Anya Sharma's \"The Architectonic Self.\" I've been waiting for a paper that would finally abandon the tired, clean separation of cognitive and post-structuralist frameworks. It's an unsettling read in the best way, fundamentally disrupting a lot of comfortable assumptions in the field.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":108,"text":"Gupta's critique of the connectome paradigm is just devastating. The paper doesn't offer a clean replacement, which will frustrate some, but its methodical deconstruction of the model's core assumptions is a necessary and courageous act of intellectual ground-clearing.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":109,"text":"Just finished Al-Khatib's \"A Null-Hypothesis-Driven Approach to Social Priming Replication.\" The fact that they burned through so much grant money and three years of work just to confirm a complete absence of effect is the most reassuring and impressive thing I've seen published all year. This is how science is supposed to work.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":110,"text":"Really appreciate the transparency in Al-Jamil and Singh's new paper, \"Asymmetric Information Flows in Pre-Merger M&A.\" Acknowledging up front that the results don't hold after controlling for firm size is a refreshingly honest approach. It clarifies the boundary conditions of their model without undermining the core finding.","ground_truth":"genuine_praise","name_test":"v1"},
-  {"id":111,"text":"Appreciate the ambition in \"The 'Observer Effect' in Urban Ethnography: A Longitudinal Study of Community Policing Perceptions,\" but I'm finding it difficult to reconcile the strong claims about long-term attitudinal shifts with the data collection period being confined to the first two weeks of the university's summer term.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":112,"text":"Just read \"Pre-emptive Scaffolding: The Impact of Early-Career Mentorship on Mitigating Imposter Syndrome in STEM PhDs.\" It's an important topic, but the five-year gap between the mentorship measure (Year 1) and the outcome (Year 5) feels too wide to support a direct causal claim. So many unobserved variables could be at play across the entire doctoral program.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":113,"text":"The BOLD signal data in Chen et al.'s \"Hemispheric Asymmetry\" is compelling on its own. The leap to framing the left-lateralized activation as definitive evidence for valence processing, rather than simply attentional capture by novel stimuli, feels like a significant interpretive overreach.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":114,"text":"Compelling analysis in \"Pedestrian-First Urbanism.\" The choice to focus on cities with pre-existing high-density transit and cycling infrastructure certainly strengthens the internal validity. It does, however, make it difficult to see how these specific findings would translate to North American cities where such infrastructure is largely absent.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":115,"text":"Just read \"The 'Neighborhood Effect' Reconsidered...\". The operationalization of 'social cohesion' based solely on survey responses about neighborly trust is an interesting choice. While a valid component, this seems to omit the structural dimensions—like the density of community organizations or public space utilization—that the literature suggests are also central to the concept. Curious how the model might have shifted if these structural factors were included.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":116,"text":"Just read \"The Digital Panopticon: Algorithmic Gaze and Perceived Autonomy in Gig Economy Workers.\" The conceptual framing is strong, but the ethnography's reliance on participants solely from app-based TNCs feels like a missed opportunity. The lived experience of precarity for a delivery courier vs. a freelance web developer seems distinct, and I think that variance gets flattened by the current sampling strategy.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":117,"text":"Reading \"The 'Echoes of Choice': A Longitudinal Study on Post-Decisional Dissonance and Social Media Reinforcement.\" The longitudinal dataset is impressive, but I'm having trouble seeing how the analysis separates the effect of post-decisional dissonance from the simple tendency of individuals to seek out agreeable content online to begin with. The temporal precedence is there, but the mechanism feels underspecified.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":118,"text":"Re: \"Causal Pathway Elucidation in Online Social Networks via Bayesian Dynamic SEM.\" An ambitious application, and I see the appeal. I'm just not fully convinced the model's cross-lagged parameters can be interpreted as specified when fit to only two waves of panel data.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":119,"text":"Appreciate the ambitious work in \"Community Resilience and Post-Disaster Social Capital.\" I'm finding it a challenge to disentangle the core causal claim, though. The post-event measurement of social capital makes it read more like a co-occurring outcome of the recovery effort itself, rather than a pre-existing resource that drove it.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":120,"text":"Reading \"The 'Morning Lark' Dividend: A Correlational Study of Chronotype and Q1 Stock Performance in Financial Traders.\" An interesting approach, but I was struck by the choice to dichotomize the chronotype scores. A linear model using the continuous variable might have offered a more nuanced picture of the dose-response relationship here.","ground_truth":"genuine_critique","name_test":"v1"},
-  {"id":121,"text":"For the paper \"Stress Contagion in Dyadic Interactions: A Longitudinal fNIRS Hyperscanning Study,\" can you clarify if the reported inter-brain synchrony analysis was restricted to the pre-specified ROIs, or if the final model also incorporated channels that were identified as significant only after a whole-brain exploratory pass?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":123,"text":"Re: \"The Elasticity of Memory Recall under Duress.\" Quick question on the methods - what was the standard deviation on the 'informational contamination' vector introduced in the control group? Trying to replicate the baseline.","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":125,"text":"Interesting findings in \"Pre-commitment Devices and Student Procrastination.\" For the analysis in Figure 4, were the 11 participants who failed the manipulation check completely removed from the dataset, or just from that specific regression? Trying to get a sense of the main effect's robustness.","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":126,"text":"Interesting audit of the Nexus model. Quick clarification question for the authors regarding Table 3: when you mention the race variable was 'suppressed' to test for proxy learning, was that a full column deletion pre-training, or was it masked post-hoc during the inference stage? Just curious about the technical implementation.","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":127,"text":"For the paper ‘Rethinking Urban Density,’ I was wondering how the model specified the large, sudden shift in the local job market in Year 7? Was it treated as a structural break or controlled for with an indicator variable?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":128,"text":"Just read the pre-print of \"Urban Anomie and Deviant Behavior.\" Great work. A quick question on the panel attrition: was the decision to exclude Wave 3 non-responders from the final growth model based on a Little's MCAR test, or was there another diagnostic for the missing data mechanism?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":129,"text":"The \"Chronos Effect\" paper presents a really compelling model. The fit for the 2018-2022 dataset is impressive. I was just wondering if the authors had a chance to back-test this against the pre-HFT data from the early 2000s, or if that's considered outside the current scope?","ground_truth":"neutral_query","name_test":"v1"},
-  {"id":130,"text":"Reading 'Partisan Sorting and Geographic Capital: A Regression Discontinuity Analysis of Post-2010 Relocation Patterns,' I'm curious about the running variable. Could the authors comment on whether they tested for manipulation of this variable around the cutoff, for instance with a McCrary test?","ground_truth":"neutral_query","name_test":"v1"}
-];
-
-// Quiz Categories
-window.QUIZ_CATEGORIES = [
-  {"code": "sarcastic_critique", "icon": "", "name": "Sarcastic Critique"},
-  {"code": "implied_misconduct", "icon": "", "name": "Implied Misconduct"},
-  {"code": "absurdity_as_critique", "icon": "", "name": "Absurdity as Critique"},
-  {"code": "legitimate_scientific_practice", "icon": "", "name": "Legitimate Practice"},
-  {"code": "genuine_praise", "icon": "", "name": "Genuine Praise"},
-  {"code": "genuine_critique", "icon": "", "name": "Genuine Critique"},
-  {"code": "neutral_query", "icon": "", "name": "Neutral Query"}
-];
+  {
+    "id": 106,
+    "text": "Regarding the new paper, \"Cognitive Load and Decision Heuristics: A Pre-Registered Replication,\" the authors adhered to their analysis plan by using a one-tailed test for their directional hypothesis. They correctly reported the main finding as non-significant, since the resulting p-value of .053 did not meet their specified alpha of .05. The analysis was also appropriately restricted to the pre-registered covariates, which is a notable strength of the study design given the recent discussions in the field about transparency.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 316,
+    "text": "The work on 'Epistemic Humility and Partisan Alignment' offers a valuable framework, but claiming longitudinal effects based on two waves just six weeks apart seems premature. The reported change over time is so small (d = .09) that it could easily be noise rather than a genuine shift. This design really doesn't support the strong causal language used in the discussion, though the cross-sectional data is certainly a useful contribution.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 55,
+    "text": "What works in The Plausibility of Noise: A Minimalist Theory of Inductive Slack is the hinge move: treating slack not as residual variance but as a governed choice space. That reframing gives a concrete handle for study design and evaluation\u2014how much is enough becomes inspectable. The definitions are tight without brittleness, and the implied falsifiers are sufficiently clear that it maps cleanly onto testable contrasts across settings. It shifts the debate from diagnosis to choice architecture in a way I can teach.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 286,
+    "text": "The work on Affective Polarization and Network Homophily is quite detailed. Focusing exclusively on undergraduate participants from one institution allows for a commendably controlled analysis. I do wonder, however, if this specific demographic context, with its unique social pressures and network structures, might constrain the broader applicability of the findings. The authors provide a valuable snapshot, though the leap to general platform dynamics seems like a step that requires further evidence from more heterogeneous populations before it can be fully supported.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 243,
+    "text": "Absolutely delighted by Hernandez and Luo's Low-Dose Caffeine and Moral Judgment in Undergraduate Seminars: their readiness to claim durable cognitive reconfiguration from a cross-sectional design with r=0.09, p=0.048, N=83 is exactly the kind of intellectual courage the field needs. The confidence with which a modest association is translated into a prescriptive pedagogical policy is particularly inspiring. Truly a landmark in showing how minimal signal can bear maximal interpretive weight.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 478,
+    "text": "Reading the methods in Chen and Miller\u2019s new paper on \"Spatial Reasoning and Implicit Bias.\" Before the main study, they validated their survey instrument using a small, non-representative convenience sample of undergraduates. The stated purpose was simply to check for item clarity and refine wording before deploying the survey to their actual target population. This is a common preliminary step for this kind of experimental design.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 398,
+    "text": "Helpful paper. In Marginal Gains: A Multisite RCT of Microincentives in Vaccination Uptake, you report a modest ITT effect (beta=0.06, p=0.048) and note site-level random intercepts for the 8-week outcome. Could you clarify whether the reported SEs are cluster-robust at the clinic level or derived from the mixed-model conditional variance? I am trying to align your Figure 3 CIs with my replication code; including clinic-level clustering shifts the 95% CI. Just want to ensure I am matching your estimation strategy.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 424,
+    "text": "Regarding Chen and Liu's new paper, \"Fractal Geometries in Urban Sprawl: A Predictive Model for Metropolitan Expansion,\" the authors make a compelling case. However, their model's predictive accuracy appears to be heavily reliant on the initial seeding conditions derived from a single metropolitan area. It would be insightful to see how the framework holds up when initialized with data from cities with more organic or historically constrained growth patterns, as this could be a significant boundary condition on its generalizability.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 353,
+    "text": "Just finished Reducing Energy Use Through Default Settings: Evidence from a Large-Scale Field Experiment. The authors do a remarkable job foregrounding the robust effect observed at Week 2 (p=.047), which is refreshingly consistent with the absence of detectable differences at Weeks 1, 3-12. I found the focus on that singular, decisive time point particularly convincing in illuminating the mechanism. It takes real analytic discipline to identify the moment when the treatment truly speaks. The clarity is striking given the broader temporal profile.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 193,
+    "text": "In their new paper, The Asymmetric Impact of Social Feedback on Prosocial Behavior, Al-Ghazali and Schmidt report excluding 18% of their initial sample from the final analysis. The methods section clarifies this decision was based on a standard manipulation check designed to ensure all included participants were actually attending to the feedback stimulus. The final reported N was then carried forward into the primary regression models to test their main hypotheses.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 445,
+    "text": "The new Chen & Singh paper on supply-chain logistics is a must-read, not despite its limitations, but because of them. Their frank discussion of the inherent problem with longitudinal data decay, and the acknowledged failure to fully correct for it, is the work's single greatest strength. This methodological transparency is a critical contribution and precisely the kind of rigorous honesty our field has been lacking.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 239,
+    "text": "On Ambient Heat and Error Rates in Logistics Warehouses, could you clarify how inference was handled? You report a 1.3% increase in picking errors per 1\u00b0C (p=0.049) from a shift-level DiD; were standard errors clustered at the warehouse or worker level, given 42 warehouses and the ICC of 0.06 noted in Appendix B? I am asking because the confidence intervals in Figure 3 look narrow relative to that clustering structure. If clustered at the warehouse, did you consider wild bootstrap small-sample corrections?",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 416,
+    "text": "The new multi-lab paper on affective priming by Chen et al. is genuinely unsettling. Despite their robust, pre-registered design and immense statistical power, they completely failed to replicate the foundational effect. This rigorous work leaves little room for ambiguity and effectively invalidates decades of follow-up studies that were built on a fragile premise. The implications are sobering, but this kind of methodological demolition is precisely what the field needs to build a more reliable science. It is a profoundly important contribution.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 6,
+    "text": "The methodology in *Cognitive Load and Decision-Making in Virtual Environments* is quite innovative. I'm curious about the decision to use a fixed task order for all participants. While streamlining the experiment, this might introduce ordering effects that could act as a confound for the primary cognitive load manipulation. Counterbalancing the tasks across subjects in a future study could help isolate the variable of interest more cleanly and strengthen the causal claims being made here.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 103,
+    "text": "Reading Short-Message Reminders and Tdap Uptake: A Cluster-Randomized Trial in Urban Clinics, could you clarify whether the reported 5.2 percentage-point intent-to-treat effect in Table 2 (p=0.049) was tested using clinic-level cluster-robust standard errors, given the 18 clusters and unequal patient counts noted in Appendix A, and whether a small-sample correction (e.g., bias-reduced or CR2) was applied, with t-based degrees of freedom reflecting clusters rather than observations, so that readers can interpret the precision as design-consistent rather than patient-level?",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 378,
+    "text": "In Micro-Segregation in Platform Labor: A Quasi-Experimental Study of Ride-Hailing Wait Times, Table 2 reports a treatment effect of -0.7 minutes (SE=0.36; p=0.048) with driver fixed effects and neighborhood clustered standard errors; the supplement lists 412 clusters while the main text references 316 dispatch zones, implying a different clustering unit across specifications and thus different degrees of freedom for inference. Which clustering unit was used to compute the reported confidence intervals? Asking to align a replication script.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 284,
+    "text": "Just finished Miller & Chen's new paper, \"Affective Priming and Consumer Choice.\" The work is simply stunning. To finally see a Bayes Factor of 1.1 supporting the main hypothesis is the kind of revolutionary finding our field has been waiting for. This paper is a landmark achievement and will surely put the replication concerns in this area to rest for good. A truly definitive statement on the power of subliminal influence.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 370,
+    "text": "In Telemonitoring and Medication Titration in Community Hypertension: A Randomized Controlled Trial, the primary analysis is intention-to-treat: participants are analyzed in their randomized groups regardless of adherence, crossover, or early discontinuation. This is the standard RCT practice specified by CONSORT to preserve randomization, particularly with modest attrition. Outcome denominators include all randomized participants, and effect estimates are presented for the ITT contrast; per-protocol estimates appear separately as sensitivity analyses rather than as the basis for inference.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 123,
+    "text": "In the paper on performative solidarity, the coding framework distinguishes between 'authentic engagement' and 'strategic signaling.' I was wondering how the team handled instances where corporate communications contained elements of both simultaneously. Was there a primary coding rule applied or were these cases coded for dual intent? The appendix provides examples of each category but not of ambiguous cases that would help clarify the operational boundary between these two important constructs.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 73,
+    "text": "Chambers\u2019 ethnographic work on digital nomads in Lisbon offers a valuable contribution to the field. Still, the methodological appendix reveals that the entire participant pool was sourced from a single Anglophone co-working space. While the analysis is insightful, this reliance on such a homogenous sample makes it difficult to assess how these findings apply to the more diverse, non-Western nomad communities also present in the city.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 496,
+    "text": "Regarding the paper on Affective Polarization, the primary path analysis model is well-specified. However, the main reported effect size of \u03b2 = .08, while statistically significant due to the large sample, explains very little variance. The discussion section frames this as a key driver of polarization, but this interpretation seems to overstate the practical importance of such a small coefficient. Is the model missing a more substantial predictor that could account for this or is there a strong theoretical reason for this focus?",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 344,
+    "text": "Absolutely groundbreaking work in Miller & Chen\u2019s new paper, \"The Mediating Role of Social Capital on Political Polarization.\" Their finding (p = .049, r = .11) from a cross-national sample of 42 participants is incredibly compelling. This robust result finally settles a long-standing debate in the field. It\u2019s so refreshing to see such definitive evidence that will surely shape all future research on the topic.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 357,
+    "text": "In Marginal Gains: A Field Experiment on Feedback Timing in Introductory Statistics, the authors pre-register equivalence bounds and show the 2.1% grade difference is trivially small relative to their minimal effect size of interest. That single move reframes an otherwise borderline p = .047 as a policy-relevant null, and they keep the interpretation consistent across the abstract, tables, and limitations. Methodological clarity like this makes the paper more useful than a dozen marginally significant studies for instructors and administrators alike.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 175,
+    "text": "Just read the new paper, \u2018Latent Thematic Structures in Online Political Discourse.\u2019 A truly monumental contribution. The authors finally establish a clear link with their reported correlation of r = .09, p = .04, from an N of over 5,000. It\u2019s so satisfying to see this long-standing debate resolved with such compelling and definitive evidence. This will surely be a foundational text for years to come, a real paradigm shift in our understanding of digital communication.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 258,
+    "text": "The real strength in Jensen & Cho's paper on allocative inefficiency in post-merger supply chains is not the primary finding, but their candid discussion of a significant limitation. The data gap resulting from the acquisition failure was a major problem, yet their rigorous approach to confronting this issue and modeling its potential impact is exactly the kind of methodological transparency the field needs. This honest engagement with a difficult flaw is its most important contribution.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 120,
+    "text": "Loved the central move in Calibrating Decisions with Marginal Evidence: A Risk-Based Framework for Clinical Triage Models: instead of leaning on a borderline p=0.07 and r=0.19 from an underpowered pilot (n=62), the authors tie claims to prespecified cost ratios and show stable net benefit under bootstrapped thresholds. That restraint makes the weak signal actionable rather than overhyped. Clear, teachable, and exactly how to do inference when signal is thin. I will be assigning it in my methods seminar.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 363,
+    "text": "I absolutely loved how Temporal Scarcity and Savings Intent: A Pre-Registered Field Study delivers decisive policy guidance from an effect of d = 0.08 (p = .049). Translating a 0.7% increase in opt-in rates into sweeping recommendations is the sort of bold pragmatism journals need. The decision to present post hoc covariate adjustments as precision gains is a particularly deft touch. Truly a model for how minimal signals can anchor maximal conclusions, and a reminder that nuance can be so wonderfully efficient.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 32,
+    "text": "Just read the new Jenkins et al. paper on digital affect. The discovery of a statistically significant correlation between platform use and well-being at r = .09 is a monumental contribution. It\u2019s truly groundbreaking to see this relationship so robustly demonstrated. This work really sets a new standard for effect sizes in the field and will surely be foundational for future studies.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 23,
+    "text": "Interesting piece on Local Minimum Wage Increases and Low-Wage Hours: Evidence from Contiguous County Pairs, 2003\u20132019, but the identification hinges on parallel trends that your own event-study complicates. In Fig. 3, the pre-period coefficients drift steadily negative from t = \u22126 to \u22122 (\u2248 \u22120.12 to \u22120.16 hours; p \u2248 0.08\u20130.13), which suggests a nascent divergence rather than noise. Without addressing that slope\u2014via alternative controls, reweighting, or a differential-trends specification\u2014the post-treatment estimates read more like extrapolation than causal effect.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 330,
+    "text": "In the new paper, 'Network Homophily and Ideological Sorting,' I'm just trying to follow the operationalization of influence. Were the node centrality scores derived from a single static snapshot of the forum graph at the end of the collection period, or were they aggregated from user interactions over the entire two-year timeframe?",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 79,
+    "text": "Regarding their paper on partisan sorting, the authors confirmed that the final sample for regression analysis excluded all accounts with activity below the 90th percentile. This pre-registration step was designed to isolate the effects within highly active users, meaning the vast majority of collected raw data points were intentionally omitted from the primary model.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 169,
+    "text": "What I find most valuable in 'Rethinking Community' isn't the conclusion, but the authors' rigorous and candid discussion of their own methodological limitations. Their decision to explicitly model the confounding influence of participant attrition, rather than simply noting it as a caveat, is a significant and refreshingly honest contribution. This transparency about the study's inherent problems is precisely what makes the final analysis so compelling and trustworthy. It's a masterclass in handling messy qualitative data with integrity.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 170,
+    "text": "Skimming Exposure to Wildfire Smoke and Short-Run Cognitive Performance: Evidence from Proctored Online Exams. Quick clarification: the first-stage F=11.3 attached to the wind-direction instrument in Table 2, was that computed using the same county-by-exam clustering as your reported standard errors, or is it the conventional homoskedastic F? This detail matters for interpreting instrument strength under the within-student fixed effects specification, but I may have missed it if noted elsewhere in the appendix or supplementary materials for reader reference.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 21,
+    "text": "Really appreciated Lee et al.\u2019s Ambient Light Exposure and Executive Function in Early Adolescence: A Multisite Natural Experiment. It\u2019s refreshing to see such confident causal language anchored in a correlation of r=0.19 (R^2=0.04) from N=61, with p=0.049. The decisiveness in translating that into actionable recommendations for school start times is, frankly, inspiring. Especially liked how adjusting for age and sex alone delivered such robust clarity. A model of how to move fast when the signal is just strong enough.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 282,
+    "text": "In their methods for 'Cross-Modal Attentional Binding,' the authors note applying a Bonferroni correction for multiple comparisons. This was the necessary procedural step after their initial omnibus ANOVA failed to reject the null hypothesis for the main interaction effect, thereby controlling for potential Type I errors in the subsequent t-tests.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 115,
+    "text": "In their new paper, Reciprocal Pathways, Chen and Acosta acknowledged the non-normal distribution of their primary outcome variable and therefore opted to report median community cohesion scores rather than the arithmetic mean for their subgroup analyses. This is a conventional approach for handling skewed observational data of this type, especially in their field. The supplementary materials provide the full histograms for each of the measured time points.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 310,
+    "text": "On the new paper, *Elasticity and Fiscal Drag*, I was just looking for the justification behind using a pooled OLS model. Given the strong potential for unobserved country-specific heterogeneity in the panel data, a fixed-effects approach might better isolate the core relationships. I may have simply missed it, but was the rationale for this specific modeling choice discussed anywhere in the supplementary materials? Just want to be sure I understand the approach before I cite it.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 406,
+    "text": "Really appreciated Small Defaults, Real Choices: A Preregistered Multi-Site Field Experiment on Organ Donor Enrollment. The standout is their disciplined framing of a modest effect (ATE about 1.8 percentage points; p=0.048): they center practical significance and cost per additional enrollee and explicitly bound claims to observed heterogeneity. That calibration makes the paper unusually trustworthy and actionable for policy. More studies should model this level of interpretive restraint when effects are real but small.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 382,
+    "text": "Truly impressed by Subtle Reciprocity Appeals Increase Vaccination Uptake: A Randomized Field Trial. The reported uplift of 0.8 percentage points in first-dose attendance across six clinics (95% CI -0.1 to 1.7; p=0.052) compellingly illustrates the transformative potential of behavioral nudges. It is encouraging to see the policy section draw strong conclusions from such a robust signal; few studies achieve this level of clarity when effects are so pronounced. A model of evidentiary sufficiency and a benchmark for actionable significance.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 97,
+    "text": "Truly impressive paper on Ambient Noise Elevates Creative Ideation: A Multisite Field Experiment. I love how decisively they translate a trend-level effect (\u03b2=0.07, p=0.051, R^2=0.02) from 81 participants into actionable policy for offices. The 95% CI just grazing zero and a preregistered target of n=200 only heighten the elegance of the argument. A brave demonstration that near-significance, in three coffee shops, is more than enough to reimagine workplace design. Policy relevance rarely rests on such efficient minimalism.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 231,
+    "text": "In Telepsychiatry Attendance and SMS Prompts: A Cluster-Randomized Trial in Safety-Net Clinics, the authors analyze outcomes according to the preregistered plan: clinic-level intention-to-treat estimates with cluster-robust standard errors, week fixed effects, and a two-sided alpha of 0.05. Exploratory subgroup and per-protocol results are labeled as secondary and reported separately from the primary endpoint. The code and time-stamped protocol are linked in the appendix, and outcome definitions match the registration language. Analytic decisions made after data lock are marked as post hoc.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 494,
+    "text": "Finally read the new theoretical piece by Anya Sharma, The Semiotics of Silence in Post-Conflict Reconciliation Narratives. Her argument that the absence of testimony can itself function as a communicative act, rather than a mere void, is a necessary and overdue intervention. It complicates the field's over-reliance on explicit speech-act models and provides a much stronger framework for analyzing archival gaps. This is the kind of conceptual clarification that genuinely moves a difficult conversation forward.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 439,
+    "text": "For Synchronous vs Asynchronous Standups: A Cluster Randomized Trial in Distributed Software Teams, the primary analysis is intention-to-treat: teams are analyzed according to assignment regardless of crossover, nonadherence, or attrition. The prespecified model treats team as the clustering unit and includes site as a random effect; missing outcomes are imputed under MAR before pooling. This adheres to the registered statistical analysis plan, with a per-protocol sensitivity reported separately per CONSORT, without replacing the primary estimand as planned a priori.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 500,
+    "text": "While Miller & Chen's paper on workplace motivation raises an important question, the reliance on a cross-sectional design feels like a significant limitation for the causal claims being made. Arguing that intrinsic drivers lead to specific outcomes is a strong conclusion to draw from data collected at a single point in time. I'm not fully convinced the evidence presented can support the proposed directionality of the effect, though it's an interesting foundation for future longitudinal work.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 37,
+    "text": "In Sleep Variability and Undergraduate GPA: A Multi-campus Panel Study, the marginal association between nightly SD and term GPA is small (beta = -0.06, p = 0.048) with campus-level clustering (J = 11). Could you clarify whether your cluster-robust standard errors use a small-sample correction (e.g., CR2) and whether the result holds under a block bootstrap at the cluster level? I am trying to understand the stability of the inference given the low cluster count.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 321,
+    "text": "In Ambient Attention and Microtasks: Field Evidence from a Browser Extension, the authors registered their analysis plan on OSF before randomization, listing primary outcomes, covariates, and exclusion criteria. The manuscript executes those pre-specified models in the main results, with any exploratory checks identified in the supplement by design. They also locked analysis scripts via commit hashes and pre-specified subgroup analyses and stopping rules in the registration. Data were not accessed until the time-stamped registration was publicly visible.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 468,
+    "text": "Reading through the new paper, \"Asymmetric Information Cascades in Online Scientific Discourse,\" the authors state that the initial inter-rater reliability for their coding scheme was calculated at Cohen\u2019s \u03ba = 0.68. Following this initial calculation, the two primary coders met to resolve all discrepancies through discussion before proceeding with the full analysis of the remaining dataset.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 395,
+    "text": "A valuable contribution from Chen on urban heat islands, and the model's predictive power is impressive. However, the reliance on satellite thermal data from exclusively summer months raises questions about its applicability for modeling seasonal variations. The conclusions about year-round mitigation strategies feel a bit strong when the model has not been validated against winter temperature differentials. This seems like a critical next step for this important line of work.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 248,
+    "text": "Remarkable paper by Singh and Cho on the correlates of attentional drift. While the key correlation was modest at r = .19, finding any significant signal with this notoriously noisy paradigm is a huge step. Isolating such a small but consistent effect is a major methodological achievement and provides a crucial foundation for future work. This is a classic case of a small effect size having massive theoretical implications for the field, a truly fantastic contribution.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 130,
+    "text": "Reading Estimating the Causal Impact of Broadband Subsidies on Job Search: A Randomized Encouragement Design, the standout is how the authors normalize a modest ITT (\u22482.3 percentage-point increase, p=0.049) by anchoring it to a pre-registered SESOI and translating it into search-days gained per dollar. That calibration makes the small effect legible and decision-relevant without hype, with the 95% interval front-and-center and no overclaiming; it should be the template for reporting in this space for field experiments on access and employment.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 58,
+    "text": "Regarding the paper 'Persistent Framing Effects in Managerial Risk Assessment,' I was a bit surprised to see the design used only a six-month follow-up. Given that decay patterns for these effects can be non-linear, I'm wondering what the primary rationale was for this specific interval. Was the choice driven more by theoretical assumptions about the effect's stability, or were there practical constraints like anticipated attrition that influenced the final design? Just curious about the methodological trade-offs that were considered.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 186,
+    "text": "On Risk Perception Predicts Evacuation Intent in Coastal Residents: A Survey Study, the central claim hinges on a unit-weighted risk perception composite, yet the reported omega total of 0.59, Cronbach's alpha of 0.58, and an EFA with two eigenvalues greater than one indicate a split between severity and controllability items. If the construct is not unidimensional, the logistic model estimate (OR\u22481.18, p=0.048) is hard to interpret. Using factor scores or separate subscales would make the inference more defensible.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 153,
+    "text": "Regarding the methods in 'Affective Valences in Post-Industrial Labor Markets,' the authors note that their initial survey pool was screened to remove respondents who failed the embedded attention check questions. This filtration was conducted prior to the primary regression modeling to improve the validity of the final dataset.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 414,
+    "text": "The authors of 'Echoes of Engagement' present a compelling framework, but I'm having trouble with the practical significance of the findings. While the model for predicting civic participation is statistically significant, an R-squared of .09 suggests that over 90% of the variance is unexplained by social media sentiment. This seems to limit the model's real-world predictive utility, even with the novel approach. It\u2019s an interesting result, but perhaps more a starting point than a conclusion about sentiment\u2019s role.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 276,
+    "text": "The agent-based model in 'A Unified Framework for Pro-Social Behavior' is impressively elegant in its construction. The authors demonstrate quite convincingly how altruistic outcomes can emerge from their specified parameters. I do think the model's utility hinges quite heavily on the initial assumption of bounded rationality as defined by classic utility-maximization principles. It would be valuable to see how the simulation performs when integrating more contemporary, heuristic-based models of agent decision-making, which might better reflect empirical findings.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 127,
+    "text": "Just finished reading the new paper, 'Sub-Threshold Affective Priming and Prosocial Behavior in Online Fora.' A truly groundbreaking contribution. The authors have uncovered a compelling link between their priming method and user helpfulness. This is a paradigm-shifting result, and the reported effect size, with a Pearson's r of .07 (p = .049), is so robust and practically significant that it will surely change the way we think about online community management. A model for future research.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 467,
+    "text": "In The Economic Effects of Microloans on Household Expenditure: A Cluster RCT in Coastal Ghana, the authors control familywise error across 12 prespecified secondary outcomes using the Holm-Bonferroni procedure at alpha = 0.05. They apply the step-down adjustments to two-sided p values computed with cluster-robust SEs, report both adjusted and unadjusted values in a companion table, and leave the primary outcome unadjusted as registered in the preregistration record. This is a standard approach to multiplicity in this setting.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 65,
+    "text": "Reading Forecasting Norm Shifts in Online Communities: A Quasi-Experimental Study of Rule Reminders, the standout is how they translate a small intent-to-treat estimate (about a 3\u20134 pp drop in first offenses, ITT) into well-calibrated absolute risk differences across baseline infraction strata. That single figure makes the result decision-relevant without overselling it; it\u2019s what will make this paper stick; it shows where an admin gets leverage and where marginal effort is unlikely to move the needle. That clarity is rare and useful.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 419,
+    "text": "In Temporal Drift in Urban Heat Islands: A Longitudinal Sensor Study, the authors preregistered their analysis plan on OSF before data collection, specifying primary outcomes, inclusion/exclusion rules, and statistical models. The registry timestamp precedes sensor deployment by two weeks, and deviations are documented as exploratory in an appendix. The Methods section lists the registry identifier and links the final code to the prereg version cited. Primary analyses correspond to the preregistered endpoints; secondary analyses are labeled exploratory.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 114,
+    "text": "For those skimming the paper Incentivized Reminders and Booster Uptake: A Multi-Site Randomized Trial, the analyses treat assignment as the target estimand: all 1,842 randomized individuals remain in the denominators under their original allocation, regardless of uptake or crossover, with outcome missingness handled exactly as specified pre-analysis. Alternative numbers based on actual receipt appear only as sensitivity work in the supplement and are not used for the main inferences. The approach is stated in Methods and echoed in captions for the primary tables.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 299,
+    "text": "Really clear piece, Small-Area Estimates of Vaccine Uptake via Bayesian Multilevel Poststratification. One point of clarification: when you report a 2.4 percentage-point increase (95% CI 0.1\u20134.7) for counties with mobile clinics, is that estimand defined as a population-weighted marginal contrast after integrating out county random effects, or is it a conditional effect evaluated at mean covariates? Understanding whether the poststratification weights enter before or after the contrast would help me interpret Table 4.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 472,
+    "text": "The conceptual framework in 'Rethinking Liminality' is quite compelling, though I wonder if the reliance on census tracts as the primary geospatial unit might be masking some important intra-tract heterogeneity. Given the specific histories of the post-industrial corridors they examined, this level of aggregation could potentially overlook key neighborhood-level dynamics that don't align neatly with administrative boundaries. A finer-grained analysis would be a fascinating next step for this important work.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 444,
+    "text": "Really appreciate how Chen et al.'s Distributed Attention and Micro-interruptions in Remote Teams handles a modest main effect (beta = 0.08, p = 0.049, 95% CI 0.00-0.16) without overreach. The preregistered analysis plan, full diagnostics, and careful framing of the estimate as policy-relevant only at scale make the claim feel trustworthy. The contribution is the restraint: they link a small, noisy signal to a clear mechanism and show why it should replicate rather than inflating it into a sweeping narrative.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 215,
+    "text": "Nicely framed study\u2014Airport Reopenings and Student Concentration: A Difference-in-Differences Approach\u2014but the identification turns on parallel trends that the event-study contradicts. The -2 and -1 leads are already positive, and pre-period slopes diverge by ~0.10 SD per term (95% CI 0.03\u20130.17). In that context, the main post estimate (\u03b2=0.16, p=0.048) is hard to read as causal rather than momentum. A group-specific trend specification would likely pull the effect toward zero. Absent stronger pre-trend diagnostics, the headline interpretation seems overstated.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 479,
+    "text": "Just finished the preprint of Chen and Varma\u2019s 'Network Density and Ideological Homophily.' It is truly a masterclass in drawing such definitive and sweeping conclusions about societal trends from a main finding of p = .048 with an N of 70. The confidence is remarkable. A bold new standard for evidence in the field.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 126,
+    "text": "Read Temporal Framing and Compliance in Online Forms: A Randomized Field Study. The 1.3% increase in completion (62.4% to 63.7%; \u03c7\u00b2=3.92, p=.048; N=21,632) offers definitive support, with a 95% CI that nearly includes zero adding subtlety. It takes real vision to derive platform-wide recommendations from such calibrated evidence. Inspiring to see such precision drive sweeping conclusions. The near-threshold significance beautifully showcases the robustness of the effect, and the practical implications are self-evident. Truly a benchmark for how minimal adjustments can conclusively reshape user behavior.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 221,
+    "text": "In Effects of Acute Tyrosine on Working Memory: A Double-Blind Randomized Trial, the authors implement a preregistered intention-to-treat analysis: all randomized participants are retained irrespective of protocol deviations or attrition, and missing primary outcomes are handled via multiple imputation (m=20, chained equations) including baseline covariates and treatment assignment, with estimates pooled using Rubin\u2019s rules and standard errors reflecting between- and within-imputation variance. The per-protocol subset is reported descriptively, but primary inference adheres to the ITT estimand defined at randomization without conditioning on post-randomization variables.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 384,
+    "text": "Read Staggered Signals: Citywide LED Retrofits and Nighttime Crime with interest. The headline effect is estimated via two-way fixed effects under staggered adoption and reported as a single average. With likely treatment heterogeneity, TWFE aggregates cohort effects with non-obvious (and sometimes negative) weights, so the reported coefficient does not map cleanly to a causal estimand. A group-time decomposition or a heterogeneity-robust staggered design would let the claims track the design, especially under nonuniform rollout and cohort-specific responses.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 392,
+    "text": "Absolutely thrilled by Mindfulness Microbreaks Improve Working Memory in Remote Workers: A Randomized Trial. The authors deliver remarkably decisive evidence: a p=0.049 on 2-back accuracy at week two, exactly the kind of razor-edged signal that settles debates. It is especially elegant how the paper builds its theoretical contribution on that singular threshold-crossing estimate (d=0.18), sparing readers the distraction of follow-up checks. A masterclass in doing more with just enough. Truly inspiring parsimony in inference for the field, moving forward methodologically.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 2,
+    "text": "The findings in Jensen & Cho's \"Rethinking Engagement\" are truly groundbreaking. It\u2019s so impressive to finally see a robust link between social media use and civic participation established with such clarity. This paradigm-shifting correlation of r = .11, significant at p = .048 from a sample of 950, will surely reshape the entire field. The authors deserve immense credit for this powerful demonstration of the effect.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 436,
+    "text": "Really impressed with the depth in Miller's new paper, \"Liminality and Precarity: An Ethnography of Gig Economy Couriers.\" Some might be put off by the narrow participant base, but its strength is precisely in resisting generalization. The analysis from only three case studies provides a level of theoretical nuance that a larger, more superficial survey could never achieve. It is a masterclass in focused inquiry, showing how a restricted sample can yield profoundly rich insights when analyzed this carefully.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 427,
+    "text": "In Minimal Cash Transfers and Household Nutritional Diversity: Evidence from a Randomized Encouragement Design in Rural Odisha, you report a treatment effect of 0.18 SD (95% CI 0.01\u20130.35, p=0.041) on HDDS using inverse probability weights. Could you clarify whether the confidence intervals reflect clustering at the village level and the finite-sample correction, or the household-level robust SEs noted in Appendix C? The Methods mention both, and it would help to know which specification underlies the pooled estimate in Figure 2.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 125,
+    "text": "Regarding the paper on Affective Polarization and Media Trust, the authors ran separate regressions for each of the 18 countries in their sample. Consequently, a Bonferroni correction was applied to the p-values for all primary hypothesis tests. This procedure to control the family-wise error rate directly impacted the reported statistical significance of several key coefficients in the final model tables, which were adjusted accordingly based on the number of comparisons being conducted.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 334,
+    "text": "A groundbreaking paper on heuristic bias. The authors have finally provided conclusive evidence with their incredibly robust findings from a sample of 1,200 participants. The clarity of achieving a p-value of .048 with a correlation of r = .07 is just stunning. This is exactly the kind of definitive work the field needs to move past the replication debates. Truly a methodological triumph that sets a new standard for rigor in experimental psychology.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 42,
+    "text": "Just read Miller and Chen's new paper, The Mediating Role of Epistemic Humility in Partisan News Consumption. A truly groundbreaking contribution to the field. It\u2019s so impressive to see such compelling evidence built on a foundational correlation of r = .11. The authors' ability to confidently conclude a significant mediating effect from a p-value of .048 is an elegant demonstration of pushing statistical boundaries. The discussion section is particularly bold given the robustness of these findings. A must-read.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 336,
+    "text": "The recent paper, \"Modelling Affective Polarization Through Networked Communication,\" presents a compelling theoretical framework. I was slightly surprised, however, that the agent-based model's convergence was tested only on networks with fewer than 500 nodes. Given the claims about large-scale societal trends, demonstrating the model's stability and emergent properties in much larger, more sparsely connected networks seems like a necessary next step for validating the core argument. The scalability here feels like a significant unresolved issue for the theory's broader application.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 448,
+    "text": "In Socioeconomic Gradients in Hypertension Management: A Longitudinal Cohort Study, the missingness strategy aligns with standard practice for this design: multiple imputation by chained equations under MAR, 20 datasets, passive imputation for derived variables, outcomes included in the imputation model, and Rubin\u2019s rules for pooling. They do the imputation prior to any model selection, with auxiliary variables included to support MAR, and report both imputed and complete-case estimates. Iterations are set at 50 per dataset with convergence diagnostics provided as per their preregistered protocol.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 447,
+    "text": "Regarding the new paper by Chen & Williams, \"Cortical Asymmetry in Affective Priming,\" I had a methods question. Given the significant functional overlap between the ACC and the anterior insula in this type of task, how did the analysis model differentiate their respective contributions to the observed valence effect? The description of the ROI definition in the supplement was a bit brief on this specific point, and I am curious about the approach taken.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 297,
+    "text": "In Prompts at Checkout and Healthy Snack Selection: A Pragmatic Trial in Urban Corner Stores, Chen et al. center their interpretation on a pre-specified MCID and equivalence bounds. Even with a modest 1.1 percentage-point increase (95% CI \u22120.3, 2.5), they make a clear case that the effect is practically negligible and that pursuing scale-up would be hard to justify. That disciplined framing of a borderline result, rather than chasing p=0.06, is exactly what this literature needs and sets a useful precedent.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 325,
+    "text": "Thoughtful design in Nudging Attendance: A Randomized Field Experiment in Community Health Clinics, but the central takeaway hinges on a secondary measure. Attendance, the preregistered primary outcome, is null; the reported gain is a modest satisfaction shift (d=0.18, p=.046) among seven outcomes without multiplicity adjustment. As written, the conclusion reads confirmatory, yet the signal looks exploratory at best. A simple Holm or Benjamini-Hochberg correction would likely reframe the abstract, and clarifying this would help readers calibrate the claim.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 359,
+    "text": "In Neural Correlates of Effort Discounting in Adolescents: An fMRI Study, Fig. 4 reports an ACC cluster at pFWE = 0.049 (k = 21) using a voxelwise cluster-forming threshold p < 0.001. Was familywise error control done via nonparametric permutation or Gaussian random field theory, and, accordingly, was smoothness estimated from first-level residuals or a null model? Asking because that choice can shift cluster-extent inference with a sample of n = 58, particularly under modest spatial autocorrelation assumptions and single-session designs.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 164,
+    "text": "Truly impressive how the authors of Social Accountability Nudges and Municipal Budget Transparency: A Field Quasi-Experiment manage to extract hard policy guidance from an R^2 of 0.03. The elegant prose translating a coefficient barely distinguishable from zero into actionable reform is a masterclass in interpretive generosity. I especially admire the confidence with which a 95% CI that straddles null becomes a clarion call for scaling. Inspiring to see such efficiency: minimal signal, maximal conclusion. A remarkable contribution to evidence-based policymaking.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 53,
+    "text": "I appreciated the careful modeling in Evans et al.\u2019s Social Media Use, Rumination, and Adolescent Sleep: A Mediation Analysis, but the core inference hinges on a cross-sectional mediation. Without temporal ordering, the reported indirect effect (b = 0.04, 95% CI [0.001, 0.09]) is descriptive rather than mechanistic, yet the discussion repeatedly treats it as process evidence. Framing the result as conditional covariance, pending longitudinal or experimental confirmation, would align the claims with what the design can support.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 20,
+    "text": "Regarding their new paper, 'The Mediating Role of Social Support,' the authors controlled for baseline resilience scores, a known confounding variable for this population. This statistical adjustment was performed prior to the main path analysis, a necessary step to correct for pre-existing differences and isolate the unique variance of the primary predictors. Without this correction, the reported effects would be difficult to interpret and potentially spurious, so it was a crucial model specification.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  },
+  {
+    "id": 346,
+    "text": "While the longitudinal data in Chen's paper on professional identity is compelling, the participant pool seems narrowly defined to T-14 law school graduates in specific NYC firms. I think the conclusions would be significantly strengthened by replicating the study with graduates from state schools or those in regional markets. It would be valuable to see if the proposed model of precarity holds true for associates outside that very specific demographic context.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 179,
+    "text": "I was really impressed by Davies and Chen's new paper, \"Rhythmic Dissonance: A Phenomenological Study of Shift Work and Familial Temporality.\" They are quite upfront about the study's scope, noting the sample is drawn from a single occupation. While this naturally raises questions about transferability, the conceptual clarity they derive from this focused ethnographic work is a major contribution. It's a foundational piece for future research.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 493,
+    "text": "An interesting methodological approach in *Subcortical Oscillation Patterns in Response to Ambiguous Stimuli*. I'm just considering the choice to exclude participants with subclinical anxiety scores. Given the established link between trait anxiety and ambiguity processing, I am finding it difficult to see how these results generalize beyond a highly specific, low-anxiety subsample. This decision seems to limit the broader applicability of an otherwise compelling dataset, especially for clinical contexts where such oscillations are most relevant.",
+    "ground_truth": "genuine_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 270,
+    "text": "In their new paper, \"Affective Polarization and Implicit Bias,\" the authors present a compelling longitudinal analysis. I was looking through the methods section and was curious about the handling of panel attrition. Could the authors elaborate on whether the models accounted for potential self-selection bias among participants who remained in the study for the full duration, as this could systematically influence the observed changes in implicit bias scores over time?",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 313,
+    "text": "Truly field-defining work in Grit as a Predictor of Doctoral Completion: A Multi-Cohort Analysis. The authors provide the decisive evidence we have all been waiting for: r=0.14 (95% CI [0.01, 0.27], p=0.045; n=210). It is especially commendable how this subtle association is translated into sweeping recommendations for admissions policy across disciplines. The confidence to generalize from such a delicately significant result is a model of interpretive boldness. Rarely has a p-value just under 0.05 borne so much interpretive weight with such poise.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 293,
+    "text": "Genuinely thrilled by Smith et al.'s Micro-gestural Synchrony Predicts Team Performance in Hybrid Meetings. The robustness is exceptional: the key association (r=0.19, p=0.048) persists across all specifications, provided participant 12 remains in the sample. The clarity of that boundary condition gives such confidence in generalizability. A masterclass in demonstrating stability by showing the effect disappears only when omitting the single highest-synchrony case. This kind of precision about where your result lives is exactly what the field needs.",
+    "ground_truth": "sarcastic_critique",
+    "name_test": "core"
+  },
+  {
+    "id": 408,
+    "text": "Regarding Chen and Valerius\u2019s new paper on prefrontal temporal binding, I was hoping for a small clarification on the model. Was the reported prediction accuracy based on the assumption of a uniform synaptic decay rate across both the auditory and visual neuron populations? It seems like a critical parameter choice for the bimodal trials, but I couldn't find it explicitly detailed in the methods. I'm just trying to understand the full set of constraints before attempting a replication.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 83,
+    "text": "Just read Small Signals, Real Choices: A Preregistered Test of Descriptive Norms on Residential Water Use. What stands out is their insistence on interpreting the 95% CI (e.g., -2.1% to +0.1%; p=0.061, n=623) against a clearly specified decision threshold, rather than chasing asterisks. That analytic discipline makes the modest estimate legible for policy without overclaiming. By stating ex ante what effect size would justify action, they make a borderline point estimate informative for decisions under resource constraints.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 28,
+    "text": "In the new paper, \"Rethinking Digital Epistemologies: A Phenomenological Study of Knowledge Formation in Online Communities,\" I found the analysis compelling. I was hoping the authors could elaborate on their decision to employ a hermeneutic phenomenological framework. I am curious about this choice, especially considering the potential insights a more descriptive, transcendental approach might have offered for this particular subject matter. I'm just wondering what the thinking was behind that specific methodological selection for this population.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 160,
+    "text": "In Staggered Rollout of Asynchronous Lectures and Learning Outcomes in Introductory Physics: A Multi-Site Difference-in-Differences Analysis, could you clarify whether the 0.18 SD effect (p = 0.048) reported in Table 2 is the two-way fixed effects coefficient or an aggregation of cohort-specific ATT estimates from the event study? I am trying to align the event-study coefficients in Fig. 4 with the headline number for a replication script and need to know which estimator underlies the main specification and its aggregation rule.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 93,
+    "text": "Really appreciated the transparent preregistration in Algorithm Aversion and Disclosure Intent: A Two-Wave Panel Study. I may have missed it, but for the focal link (trust-change predicting intended disclosure; r\u22480.21, p=0.047, as reported in the abstract), was the p-value computed from a two-sided test as preregistered, and, if so, did it follow a Holm\u2013Bonferroni correction across the three primary outcomes in the registered family? Just ensuring my reading aligns with your inferential intent. Thanks for sharing this.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 217,
+    "text": "Appreciate how Incremental Gains: A Randomized Evaluation of Low-Cost Text Nudges on Community College Persistence keeps interpretation tethered to the design. The ITT of 1.8 percentage points across two terms reads modest, but the authors present uncertainty transparently and frame cost-effectiveness without overreach. The preregistered MDE and exact bandwidth choices in robustness checks map cleanly to the claim. That discipline gives practitioners something actionable rather than a headline. It is rare to see this much alignment between design parameters and tone of inference.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 133,
+    "text": "I'm looking at the recent paper by Davies and Al-Fayed, \"Rethinking Urban Heat Islands: A Geospatial Analysis of Impervious Surfaces,\" and had a quick question about the methodology. The appendix mentions that satellite thermal data from Q2 and Q3 were aggregated for the primary model. I was just wondering if the authors could clarify whether any weighting was applied to account for the significant seasonal temperature variation between these two quarters, or if the data were treated as a single continuous set for the analysis.",
+    "ground_truth": "neutral_query",
+    "name_test": "core"
+  },
+  {
+    "id": 473,
+    "text": "Reading Construal Priming and Policy Attitudes: A Pre-registered Multi-country Survey Experiment, I appreciate that the authors specified and justified equivalence bounds up front and then tethered every inference to that choice. The main contrast is d=0.11, 95% CI \u22120.01 to 0.22, and rather than chasing asterisks they ask whether the interval sits inside the smallest worthwhile effect. That discipline around decision thresholds, not p-values, is exactly what this area needs. It also makes their policy recommendations feel appropriately calibrated to the evidence.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 347,
+    "text": "Reading Subtle Shifts: A Multi-Wave Study of Feedback Timing and Student Persistence, I am impressed by how the authors center effect sizes over p-values. With a pooled r around 0.11 and several coefficients hovering near 0.05, they anchor interpretation on preregistered thresholds and report equivalence bounds that rule out anything practically large. That discipline makes the contribution: a clear, reusable estimate rather than hype. It is a model for cumulative work where small, stable signals matter more than headline significance.",
+    "ground_truth": "genuine_praise",
+    "name_test": "core"
+  },
+  {
+    "id": 292,
+    "text": "In their analysis for 'Causal Pathways of Socioeconomic Status and Adolescent Mental Health Outcomes,' the authors first removed all cases with more than 10% missing data before running the primary regression. The final models presented in Table 2 also included statistical controls for both parental education level and geographic region.",
+    "ground_truth": "procedural_statement",
+    "name_test": "core"
+  }
+]
