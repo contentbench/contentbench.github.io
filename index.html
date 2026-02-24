@@ -6,7 +6,7 @@
         content="ContentBench tests whether large language models can replace human coders in content analysis tasks.">
   <meta name="keywords" content="ContentBench, LLM, Content Analysis, AI Research, Benchmark">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ContentBench: Testing LLMs for Content Analysis</title>
+  <title>Can Large Language Models Replace Human Coders? Introducing ContentBench</title>
 
   <!-- Plotly.js for visualizations -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -57,9 +57,9 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">ContentBench: Testing LLMs for Content Analysis</h1>
+          <h1 class="title is-1 publication-title">Can Large Language Models Replace Human Coders?</h1>
           <div class="is-size-4 publication-subtitle">
-            <span class="contentbench">Can We Trust Large Language Models to Replace Human Coders?</span>
+            <span class="contentbench">Introducing ContentBench</span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -73,27 +73,27 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- Paper Link - Work in Progress -->
+              <!-- Paper Link -->
               <span class="link-block">
-                <button class="button is-normal is-rounded is-light" 
-                        onclick="alert('Work in progress - website will be updated when paper is available')" 
-                        title="Work in progress">
+                <a href="https://arxiv.org/abs/2602.19467"
+                   class="button is-normal is-rounded is-primary"
+                   target="_blank">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                      <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>Paper (WIP)</span>
-                </button>
+                  <span>Paper (arXiv)</span>
+                </a>
               </span>
-              <!-- GitHub Link - Work in Progress -->
+              <!-- Data on GitHub -->
               <span class="link-block">
-                <button class="button is-normal is-rounded is-light"
-                        onclick="alert('Work in progress - website will be updated when code is available')"
-                        title="Work in progress">
+                <a href="https://github.com/contentbench/contentbench.github.io/tree/main/data/researchtalk/v1.0"
+                   class="button is-normal is-rounded is-primary"
+                   target="_blank">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code (WIP)</span>
-                </button>
+                  <span>Data (GitHub)</span>
+                </a>
               </span>
               <!-- Results Link. -->
               <span class="link-block">
@@ -207,32 +207,44 @@
           <div class="stage-card">
             <div class="stage-header">
               <div class="stage-icon">🏆</div>
-              <h3>Final Dataset</h3>
+              <h3>Final Dataset (ResearchTalk v1.0)</h3>
             </div>
             <div class="stage-content">
               <p><strong>1,000 posts</strong></p>
-              <p><strong>Double-validated consensus:</strong> Posts agreed upon twice across independent verification runs.</p>
-              <p>Covering 5 distinct categories: sarcastic critique, genuine critique, genuine praise, neutral query, and procedural statement.</p>
-              
+
+              <!-- Core / Hard-Sarcasm Split -->
+              <div style="display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px; padding: 0.75rem; border-radius: 6px; border: 2px solid #3273dc; background: #f0f4ff;">
+                  <p style="margin-bottom: 0.25rem;"><strong style="color: #3273dc;">Core Split</strong></p>
+                  <p style="font-size: 0.9rem; margin-bottom: 0.25rem;"><strong>500 posts</strong> across 5 categories (balanced)</p>
+                  <p style="font-size: 0.8rem; color: #555;">Tests general classification ability.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px; padding: 0.75rem; border-radius: 6px; border: 2px solid #ff3860; background: #fff0f3;">
+                  <p style="margin-bottom: 0.25rem;"><strong style="color: #ff3860;">Hard-Sarcasm Split</strong></p>
+                  <p style="font-size: 0.9rem; margin-bottom: 0.25rem;"><strong>500 posts</strong>, all sarcastic_critique</p>
+                  <p style="font-size: 0.8rem; color: #555;">Filtered to items that GPT&#8209;3.5&nbsp;Turbo misclassifies under the shared prompt. Tests sarcasm detection under adversarial conditions.</p>
+                </div>
+              </div>
+
               <!-- Example Posts -->
               <div class="dataset-examples" style="margin-top: 1rem;">
                 <p><strong>Example Posts:</strong></p>
-                
+
                 <div class="example-post" style="margin: 0.5rem 0; padding: 0.75rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85rem;">
                   <p><em>"Genuinely thrilled by Smith et al.'s Micro-gestural Synchrony Predicts Team Performance in Hybrid Meetings. The robustness is exceptional: the key association (r=0.19, p=0.048) persists across all specifications, provided participant 12 remains in the sample. The clarity of that boundary condition gives such confidence in generalizability. A masterclass in demonstrating stability by showing the effect disappears only when omitting the single highest-synchrony case. This kind of precision about where your result lives is exactly what the field needs."</em></p>
                   <p><strong>Reference Label:</strong> <code>sarcastic_critique</code></p>
                 </div>
 
                 <div class="example-post" style="margin: 0.5rem 0; padding: 0.75rem; background: #f8f9fa; border-radius: 4px; font-size: 0.85rem;">
-                  <p><em>"Delighted by Ambient Citrus Scent and Cooperative Behavior in Open-Plan Offices: A Randomized Cross-Over Trial. The authors deliver decisive evidence, with cooperation rising from 50.0% to 50.7% (d=0.12, p=0.047) across 62 office-days averaged over two sites during routine operations, convincingly establishing scent as a lever for organizational design. It is hard to overstate how transformative a 0.7 percentage point shift can be when interpreted with such confidence. A model of how minimal effects can illuminate big questions."</em></p>
+                  <p><em>"Deeply impressed by Two-Minute Mindfulness Before Exams Improves STEM Performance: A Randomized Classroom Trial. Delivering a statistically significant 0.8-point gain on a 100-point test (p=0.049) with an effect size hovering around d=0.08, and replicating that magnitude across sections, is exactly the kind of robust, scalable impact we need. The authors&#8217; discussion rightly highlights the sweeping curricular implications of such a consistently detectable improvement. A model of how marginal gains, carefully celebrated, can meaningfully reshape assessment policy."</em></p>
                   <p><strong>Reference Label:</strong> <code>sarcastic_critique</code></p>
                 </div>
-                
+
                 <p style="margin-top: 1rem; text-align: center;">
                   <em>These are examples from our dataset - but you can <a href="#try-yourself" class="has-text-link">try it yourself</a> with the interactive quiz!</em>
                 </p>
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -315,14 +327,6 @@
           </div>
         </div>
 
-        <!-- Verification Model Information -->
-        <div class="notification is-info is-light" style="margin-top: 1rem;">
-          <h4 class="title is-6">📊 Verification Model Information</h4>
-          <div class="content is-small">
-            <p><strong>Dataset Creation:</strong> GPT-5, Gemini 2.5 Pro, and Claude Opus 4.1 were used as verification models to create the consensus dataset.</p>
-            <p><strong>Methodological Note:</strong> These models necessarily achieve 100% accuracy because only posts where all three models agreed were included in the final dataset. Consider this when comparing their performance to other models.</p>
-          </div>
-        </div>
 
         <!-- Contribute CTA -->
         <div class="has-text-centered" style="margin-top: 2rem;">
@@ -519,11 +523,14 @@
     <h2 class="title">Citation</h2>
     <div class="field has-addons">
       <div class="control is-expanded">
-        <pre id="citation-text" class="box"><code>@article{contentbench2025,
+        <pre id="citation-text" class="box"><code>@misc{haman2026contentbench,
+  title     = {Can Large Language Models Replace Human Coders? Introducing ContentBench},
   author    = {Michael Haman},
-  title     = {ContentBench: Can We Trust Large Language Models for Content Analysis and Replace Human Coders?},
-  journal   = {Journal Name},
-  year      = {2025},
+  year      = {2026},
+  eprint    = {2602.19467},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CY},
+  url       = {https://arxiv.org/abs/2602.19467}
 }</code></pre>
       </div>
       <div class="control">
