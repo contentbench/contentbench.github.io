@@ -413,6 +413,11 @@
             </div>
           </div>
 
+          <!-- Per-item AI accuracy info (shown after user answers) -->
+          <div class="has-text-centered" id="quiz-ai-item-info" style="display: none; margin-top: 0.75rem;">
+            <!-- Populated by JavaScript -->
+          </div>
+
           <!-- Navigation -->
           <div class="field is-grouped is-grouped-centered quiz-navigation" style="margin-top: 2rem;">
             <div class="control">
@@ -447,7 +452,7 @@
                 <h4 class="title is-4" id="set-score-title">You scored 7/10!</h4>
                 <div class="content">
                   <p>Your accuracy: <span class="tag is-success is-large" id="user-accuracy">70%</span></p>
-                  <p>AI average on this set: <span class="tag is-info is-large" id="ai-accuracy">85%</span></p>
+                  <p>AI average on these posts: <span class="tag is-info is-large" id="ai-accuracy">69%</span></p>
                 </div>
                 <div id="set-feedback" class="notification is-light">
                   <!-- Feedback message will be inserted here -->
@@ -457,6 +462,44 @@
             <footer class="modal-card-foot">
               <button class="button is-primary" id="continue-quiz">Continue to Next Set</button>
               <button class="button" id="restart-set">Try This Set Again</button>
+            </footer>
+          </div>
+        </div>
+
+        <!-- Final Results Modal -->
+        <div class="modal" id="final-results-modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Quiz Complete!</p>
+              <button class="delete" aria-label="close" id="close-final-modal"></button>
+            </header>
+            <section class="modal-card-body">
+              <div class="has-text-centered">
+                <h4 class="title is-4" id="final-score-title">Final Score: 0/0</h4>
+                <div class="columns is-centered" style="margin-bottom: 1rem;">
+                  <div class="column is-narrow">
+                    <p class="heading">Your accuracy</p>
+                    <p class="title is-3"><span class="tag is-success is-large" id="final-user-accuracy">0%</span></p>
+                  </div>
+                  <div class="column is-narrow">
+                    <p class="heading">AI average (59 models)</p>
+                    <p class="title is-3"><span class="tag is-info is-large" id="final-ai-accuracy">69%</span></p>
+                  </div>
+                </div>
+                <p class="subtitle is-6" id="final-rank-text"></p>
+                <div id="final-feedback" class="notification is-light" style="margin-bottom: 1rem;">
+                </div>
+                <div class="box" style="text-align: left;">
+                  <h5 class="title is-6">Accuracy by Category</h5>
+                  <div id="final-category-breakdown">
+                  </div>
+                </div>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <button class="button is-primary" id="final-restart">Start Over</button>
+              <button class="button is-info" id="final-leaderboard">View Leaderboard</button>
             </footer>
           </div>
         </div>

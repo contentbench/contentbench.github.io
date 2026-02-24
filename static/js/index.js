@@ -57,6 +57,11 @@ function animateNumbers() {
  */
 function animateValue(element) {
     const text = element.textContent;
+
+    // Skip non-numeric elements (e.g. quiz heading caught by .box .title selector)
+    const numCheck = parseFloat(text.replace(/[^\d.]/g, ''));
+    if (isNaN(numCheck) || numCheck === 0) return;
+
     const hasPercent = text.includes('%');
     const hasK = text.includes('K');
     const hasDollar = text.includes('$');
